@@ -1,0 +1,15 @@
+{
+  "name": "personal-cv",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "update-cv": "node scripts/update-cv.js",
+    "update-cv:vi": "node scripts/update-cv.js --vi"
+  },
+  "dependencies": {
+    "astro": "^4.5.0"
+  }
+}

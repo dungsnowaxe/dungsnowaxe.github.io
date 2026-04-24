@@ -1,0 +1,120 @@
+---
+export interface Props {
+  data: {
+    experience: Array<{
+      title: string;
+      company: string;
+      period: string;
+      details: string[];
+    }>;
+  };
+  heading?: string;
+}
+
+const { data, heading = "Experience" } = Astro.props;
+const { experience } = data;
+---
+
+<section class="section experience-section">
+  <div class="container">
+    <h2 class="animate-on-scroll">{heading}</h2>
+    <div class="experience-list stagger-children">
+      {experience.map((job) => (
+        <article class="experience-item card animate-on-scroll">
+          <div class="experience-header">
+            <div class="experience-title-group">
+              <h3>{job.title}</h3>
+              <span class="experience-company">{job.company}</span>
+            </div>
+            <span class="date-badge">{job.period}</span>
+          </div>
+          <ul class="experience-details">
+            {job.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .experience-item {
+    position: relative;
+  }
+
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--color-accent), transparent);
+    border-radius: 3px;
+    opacity: 0.5;
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-sm);
+  }
+
+  .experience-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .experience-company {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .date-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+
+  .experience-details {
+    list-style: none;
+    padding-left: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-details li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .experience-details li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+</style>

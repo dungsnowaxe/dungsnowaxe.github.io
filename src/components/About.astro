@@ -1,0 +1,41 @@
+---
+export interface Props {
+  data: {
+    aboutMe: string;
+  };
+  heading?: string;
+}
+
+const { data, heading = "About Me" } = Astro.props;
+const { aboutMe } = data;
+---
+
+<section class="section about-section animate-on-scroll">
+  <div class="container">
+    <h2>{heading}</h2>
+    <p class="about-text">{aboutMe}</p>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+  }
+
+  .about-text {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 70ch;
+  }
+
+  .about-text::first-letter {
+    font-size: 3.5em;
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.1em;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+</style>

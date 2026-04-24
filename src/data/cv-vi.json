@@ -1,0 +1,100 @@
+{
+  "personalInfo": {
+    "fullName": "Đoàn Anh Dũng",
+    "jobTitle": "Kỹ sư Frontend",
+    "dateOfBirth": "13 tháng 10, 1996",
+    "phone": "+84 338-701-246",
+    "email": "doananhdung1310@gmail.com",
+    "address": "360 Giải Phóng, Phương Liệt, Hà Nội"
+  },
+  "aboutMe": "Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng các ứng dụng web và di động có khả năng mở rộng trong các lĩnh vực fintech, an ninh mạng và SaaS. Tôi chuyên sâu về hệ sinh thái React, Next.js và Vue, với thành tích nổi bật trong việc phát triển giao diện ngườii dùng hiệu suất cao, dẫn dắt đội ngũ frontend và đưa ra các quyết định kỹ thuật phù hợp với mục tiêu kinh doanh.",
+  "experience": [
+    {
+      "title": "Kỹ sư Frontend",
+      "company": "Birdeye",
+      "period": "2023 — Hiện tại",
+      "details": [
+        "Thiết kế kiến trúc và phát hành ứng dụng phân tích tiền điện tử đa nền tảng phục vụ 6.000+ ngườii dùng hoạt động hàng tháng với khả năng trực quan hóa dữ liệu thị trường theo thờii gian thực",
+        "Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design), giảm 35% kích thước gói bundle và rút ngắn thờii gian tải trang ban đầu",
+        "Dẫn dắt phát triển toàn diện trang landing page và bảng điều khiển phân tích Birdeye Data, chịu trách nhiệm cả triển khai UI/UX và tích hợp API",
+        "Phối hợp chặt chẽ với các đội ngũ sản phẩm và thiết kế để lặp lại nhanh chóng các tính năng hướng đến người dùng trong môi trường startup nhịp độ nhanh"
+      ]
+    },
+    {
+      "title": "Kỹ sư Frontend",
+      "company": "Tomosia",
+      "period": "2022 — 2023",
+      "details": [
+        "Thiết kế và xây dựng bảng điều khiển HRM toàn diện từ đầu sử dụng React và Ant Design, hợp lý hóa các hoạt động nhân sự cho đội ngũ nội bộ",
+        "Chịu trách nhiệm duy trì và phát triển tính năng cho Online Face v1 (Next.js + MUI), đảm bảo độ ổn định trong khi liên tục ra mắt các cập nhật quan trọng",
+        "Dẫn dắt phát triển từ đầu Online Face v2, thiết lập kiến trúc frontend và tiêu chuẩn codebase cho nền tảng thế hệ tiếp theo",
+        "Dẫn dắt đội ngũ 4 kỹ sư frontend, tiến hành review code, định hướng kỹ thuật và hướng dẫn phát triển cho các lập trình viên junior",
+        "Đào tạo thực tập sinh, xây dựng tài liệu nội bộ và hướng dẫn lập trình giúp giảm 50% thờii gian onboarding"
+      ]
+    },
+    {
+      "title": "Kỹ sư Frontend",
+      "company": "VinCSS (Vingroup Cybersecurity)",
+      "period": "2021 — 2022",
+      "details": [
+        "Dẫn đầu dự án làm mới hoàn toàn ứng dụng VPN nội bộ dạng desktop sử dụng Electron và React, hiện đại hóa trải nghiệm ngườii dùng và nâng cao tính bảo mật",
+        "Xây dựng bảng điều khiển quản lý giấy phép nội bộ (React + Ant Design) tự động hóa việc cấp phép khóa và giảm thiểu công việc thủ công cho đội ngũ vận hành",
+        "Duy trì và nâng cấp các sản phẩm trong hệ sinh thái xác thực FIDO2 của công ty (Vue 2 + Vuetify), đóng góp vào giải pháp bảo mật không mật khẩu"
+      ]
+    },
+    {
+      "title": "Lập trình viên Frontend",
+      "company": "Gobysend",
+      "period": "2019 — 2021",
+      "details": [
+        "Phát triển và duy trì các trang landing page marketing và giao diện sản phẩm cốt lõi sử dụng Vue.js và Nuxt, thúc đẩy chuyển đổi ngườii dùng và tương tác",
+        "Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng",
+        "Phối hợp với đội ngũ backend và thiết kế để triển khai tính năng theo phương pháp agile trong môi trường startup giai đoạn đầu"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Kỹ sư Điện tử - Viễn thông",
+      "institution": "Đại học Bách khoa Hà Nội (HUST)",
+      "period": "2014 — 2019",
+      "description": "Tốt nghiệp từ Viện Điện tử - Viễn thông (nay thuộc Trường Điện - Điện tử). Chuyên ngành Công nghệ Thông tin và Truyền thông, tập trung vào kỹ thuật phần mềm và xử lý tín hiệu."
+    }
+  ],
+  "skills": {
+    "Ngôn ngữ & Nền tảng": [
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3 / SCSS"
+    ],
+    "Frameworks & Thư viện": [
+      "React",
+      "Vue",
+      "Astro",
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "Electron",
+      "React Native"
+    ],
+    "Công cụ & Quy trình": [
+      "Git & GitHub",
+      "Figma",
+      "CI/CD",
+      "Webpack / Vite",
+      "Docker"
+    ],
+    "Chuyên môn sâu": [
+      "Web Accessibility (WCAG)",
+      "Tối ưu hiệu suất",
+      "Thiết kế Responsive",
+      "Animation & Motion",
+      "Design Systems"
+    ]
+  },
+  "footer": {
+    "line1": "Xây dựng bằng Astro & chăm chút từng chi tiết.",
+    "line2": "Sẵn sàng cung cấp thông tin tham khảo khi có yêu cầu."
+  }
+}

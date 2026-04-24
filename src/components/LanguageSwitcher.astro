@@ -1,0 +1,61 @@
+---
+export interface Props {
+  currentLang?: 'en' | 'vi';
+}
+
+const { currentLang = 'en' } = Astro.props;
+const base = import.meta.env.BASE_URL || '/';
+const enUrl = base === '/' ? '/' : `${base}/`;
+const viUrl = base === '/' ? '/vi/' : `${base}/vi/`;
+---
+
+<div class="lang-switcher no-print">
+  <a href={enUrl} class={currentLang === 'en' ? 'active' : ''} aria-label="English">EN</a>
+  <span class="divider">/</span>
+  <a href={viUrl} class={currentLang === 'vi' ? 'active' : ''} aria-label="Tiếng Việt">VI</a>
+</div>
+
+<style>
+  .lang-switcher {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.7rem;
+  }
+
+  .lang-switcher a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 0.1rem 0.2rem;
+  }
+
+  .lang-switcher a:hover {
+    color: var(--color-text);
+  }
+
+  .lang-switcher a.active {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .divider {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+  }
+
+  @media print {
+    .lang-switcher {
+      display: none !important;
+    }
+  }
+</style>

@@ -1,0 +1,281 @@
+/* ========================================
+   Print Stylesheet — Optimized for PDF Export
+   ======================================== */
+
+@media print {
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #f8f8f8;
+    --color-surface-elevated: #f0f0f0;
+    --color-text: #1a1a1a;
+    --color-text-muted: #555555;
+    --color-accent: #D44A1A;
+    --color-accent-soft: rgba(212, 74, 26, 0.1);
+    --color-border: rgba(0, 0, 0, 0.1);
+
+    /* Compact spacing for print */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1rem;
+    --space-xl: 1.25rem;
+    --space-2xl: 1.5rem;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html {
+    font-size: 10pt;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive elements */
+  .print-button,
+  .no-print,
+  .lang-switcher {
+    display: none !important;
+  }
+
+  /* Layout adjustments */
+  .container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Sections: allow natural page breaks, don't force them onto new pages */
+  .section {
+    padding: 0.6rem 0;
+    page-break-inside: auto;       /* allow sections to split across pages */
+    page-break-before: auto;       /* don't force new page before */
+    page-break-after: auto;        /* don't force new page after */
+  }
+
+  .section + .section {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 0.3rem;
+  }
+
+  /* Hero: compact, no full-page height */
+  .hero-section {
+    min-height: auto !important;
+    padding: 0.5rem 0 0.8rem 0;
+    page-break-inside: avoid;      /* keep hero together */
+    page-break-after: avoid;       /* try to keep next section on same page */
+  }
+
+  .hero-section::before {
+    display: none !important;
+  }
+
+  .hero-greeting {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .hero-name {
+    font-size: 2.4rem;
+    margin-bottom: 0.2rem;
+    background: none !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+    color: #1a1a1a !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: #555 !important;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    gap: 0.35rem;
+    max-width: 100%;
+  }
+
+  .contact-item {
+    background: #f8f8f8 !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    padding: 0.35rem 0.45rem;
+    gap: 0.1rem;
+  }
+
+  .contact-label {
+    font-size: 0.6rem;
+    color: #888 !important;
+  }
+
+  .contact-value {
+    font-size: 0.82rem;
+    color: #1a1a1a !important;
+  }
+
+  /* About section */
+  .about-section {
+    padding: 0.4rem 0;
+  }
+
+  .about-text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .about-text::first-letter {
+    font-size: 2.5em;
+  }
+
+  /* Typography */
+  h2 {
+    font-size: 1.15rem;
+    color: #D44A1A !important;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    color: #1a1a1a !important;
+    margin-bottom: 0.1rem;
+  }
+
+  h4 {
+    font-size: 0.7rem;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: #444 !important;
+  }
+
+  /* Ensure all animations are visible */
+  .animate-on-scroll,
+  .hero-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Experience & Education lists */
+  .experience-list,
+  .education-list {
+    gap: 0.5rem;
+  }
+
+  /* Cards: keep each card intact, but allow them to split from siblings */
+  .card {
+    background: #f8f8f8 !important;
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+    padding: 0.5rem 0.6rem;
+    margin-bottom: 0.3rem;
+    page-break-inside: avoid;
+  }
+
+  .experience-item::before,
+  .education-item::before {
+    display: none;
+  }
+
+  .experience-header,
+  .education-header {
+    padding-left: 0;
+    margin-bottom: 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .experience-title-group,
+  .education-title-group {
+    gap: 0.05rem;
+  }
+
+  .experience-company,
+  .education-school {
+    font-size: 0.78rem;
+  }
+
+  .date-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+    background: rgba(212, 74, 26, 0.1) !important;
+    color: #D44A1A !important;
+  }
+
+  .experience-details {
+    padding-left: 0;
+    gap: 0.2rem;
+  }
+
+  .experience-details li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding-left: 0.85rem;
+  }
+
+  .experience-details li::before {
+    left: 0;
+  }
+
+  .education-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Skills */
+  .skills-content {
+    gap: 0.5rem;
+  }
+
+  .skills-grid {
+    gap: 0.25rem;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.45rem;
+    background: rgba(212, 74, 26, 0.1) !important;
+    color: #D44A1A !important;
+    border: 1px solid rgba(212, 74, 26, 0.2) !important;
+  }
+
+  /* Links */
+  a {
+    color: #D44A1A !important;
+    text-decoration: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 0.6rem 0;
+    color: #888 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+  }
+
+  .footer-sub {
+    font-size: 0.8rem;
+  }
+}
+
+@page {
+  margin: 1.2cm;
+  size: A4;
+}

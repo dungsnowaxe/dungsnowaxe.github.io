@@ -1,0 +1,82 @@
+# Hồ sơ CV cá nhân (Tiếng Việt)
+
+> Chỉnh sửa các trường bên dưới, sau đó yêu cầu tôi cập nhật trang web CV.
+> Các tiêu đề không được thay đổi.
+
+---
+
+## Personal Information
+
+- **Full Name:** Đoàn Anh Dũng
+- **Job Title:** Kỹ sư Frontend
+- **Date of Birth:** 13 tháng 10, 1996
+- **Phone:** +84 338-701-246
+- **Email:** doananhdung1310@gmail.com
+- **Address:** 360 Giải Phóng, Phương Liệt, Hà Nội
+
+## About Me
+
+Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng các ứng dụng web và di động có khả năng mở rộng trong các lĩnh vực fintech, an ninh mạng và SaaS. Tôi chuyên sâu về hệ sinh thái React, Next.js và Vue, với thành tích nổi bật trong việc phát triển giao diện ngườii dùng hiệu suất cao, dẫn dắt đội ngũ frontend và đưa ra các quyết định kỹ thuật phù hợp với mục tiêu kinh doanh.
+
+## Experience
+
+### Kỹ sư Frontend
+- **Company:** Birdeye
+- **Period:** 2023 — Hiện tại
+- **Details:**
+  - Thiết kế kiến trúc và phát hành ứng dụng phân tích tiền điện tử đa nền tảng phục vụ 6.000+ ngườii dùng hoạt động hàng tháng với khả năng trực quan hóa dữ liệu thị trường theo thờii gian thực
+  - Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design), giảm 35% kích thước gói bundle và rút ngắn thờii gian tải trang ban đầu
+  - Dẫn dắt phát triển toàn diện trang landing page và bảng điều khiển phân tích Birdeye Data, chịu trách nhiệm cả triển khai UI/UX và tích hợp API
+  - Phối hợp chặt chẽ với các đội ngũ sản phẩm và thiết kế để lặp lại nhanh chóng các tính năng hướng đến người dùng trong môi trường startup nhịp độ nhanh
+
+### Kỹ sư Frontend
+- **Company:** Tomosia
+- **Period:** 2022 — 2023
+- **Details:**
+  - Thiết kế và xây dựng bảng điều khiển HRM toàn diện từ đầu sử dụng React và Ant Design, hợp lý hóa các hoạt động nhân sự cho đội ngũ nội bộ
+  - Chịu trách nhiệm duy trì và phát triển tính năng cho Online Face v1 (Next.js + MUI), đảm bảo độ ổn định trong khi liên tục ra mắt các cập nhật quan trọng
+  - Dẫn dắt phát triển từ đầu Online Face v2, thiết lập kiến trúc frontend và tiêu chuẩn codebase cho nền tảng thế hệ tiếp theo
+  - Dẫn dắt đội ngũ 4 kỹ sư frontend, tiến hành review code, định hướng kỹ thuật và hướng dẫn phát triển cho các lập trình viên junior
+  - Đào tạo thực tập sinh, xây dựng tài liệu nội bộ và hướng dẫn lập trình giúp giảm 50% thờii gian onboarding
+
+### Kỹ sư Frontend
+- **Company:** VinCSS (Vingroup Cybersecurity)
+- **Period:** 2021 — 2022
+- **Details:**
+  - Dẫn đầu dự án làm mới hoàn toàn ứng dụng VPN nội bộ dạng desktop sử dụng Electron và React, hiện đại hóa trải nghiệm ngườii dùng và nâng cao tính bảo mật
+  - Xây dựng bảng điều khiển quản lý giấy phép nội bộ (React + Ant Design) tự động hóa việc cấp phép khóa và giảm thiểu công việc thủ công cho đội ngũ vận hành
+  - Duy trì và nâng cấp các sản phẩm trong hệ sinh thái xác thực FIDO2 của công ty (Vue 2 + Vuetify), đóng góp vào giải pháp bảo mật không mật khẩu
+
+### Lập trình viên Frontend
+- **Company:** Gobysend
+- **Period:** 2019 — 2021
+- **Details:**
+  - Phát triển và duy trì các trang landing page marketing và giao diện sản phẩm cốt lõi sử dụng Vue.js và Nuxt, thúc đẩy chuyển đổi ngườii dùng và tương tác
+  - Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng
+  - Phối hợp với đội ngũ backend và thiết kế để triển khai tính năng theo phương pháp agile trong môi trường startup giai đoạn đầu
+
+## Education
+
+### Kỹ sư Điện tử - Viễn thông
+- **Institution:** Đại học Bách khoa Hà Nội (HUST)
+- **Period:** 2014 — 2019
+- **Description:** Tốt nghiệp từ Viện Điện tử - Viễn thông (nay thuộc Trường Điện - Điện tử). Chuyên ngành Công nghệ Thông tin và Truyền thông, tập trung vào kỹ thuật phần mềm và xử lý tín hiệu.
+
+## Skills
+
+### Ngôn ngữ & Nền tảng
+TypeScript, JavaScript (ES6+), HTML5, CSS3 / SCSS
+
+### Frameworks & Thư viện
+React, Vue, Astro, Next.js, Tailwind CSS, GSAP, Electron, React Native
+
+### Công cụ & Quy trình
+Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
+
+### Chuyên môn sâu
+Web Accessibility (WCAG), Tối ưu hiệu suất, Thiết kế Responsive, Animation & Motion, Design Systems
+
+## Footer
+
+Xây dựng bằng Astro & chăm chút từng chi tiết.
+Sẵn sàng cung cấp thông tin tham khảo khi có yêu cầu.

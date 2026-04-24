@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Skills from '../components/Skills.astro';
+import Footer from '../components/Footer.astro';
+import PrintButton from '../components/PrintButton.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import cvData from '../data/cv.json';
+
+const { personalInfo } = cvData;
+const title = `${personalInfo.fullName} — ${personalInfo.jobTitle}`;
+---
+
+<Layout title={title} description={`Personal CV of ${personalInfo.fullName}`} lang="en">
+  <LanguageSwitcher currentLang="en" />
+  <main>
+    <Hero data={cvData} />
+    <About data={cvData} />
+    <Experience data={cvData} />
+    <Education data={cvData} />
+    <Skills data={cvData} />
+    <Footer data={cvData} />
+  </main>
+  <PrintButton />
+</Layout>
+
+<style>
+  main {
+    position: relative;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+export interface Props {
+  data: {
+    skills: Record<string, string[]>;
+  };
+  heading?: string;
+}
+
+const { data, heading = "Technical Skills" } = Astro.props;
+const { skills } = data;
+---
+
+<section class="section skills-section">
+  <div class="container">
+    <h2 class="animate-on-scroll">{heading}</h2>
+    <div class="skills-content animate-on-scroll">
+      {Object.entries(skills).map(([category, items]) => (
+        <div class="skills-category">
+          <h4>{category}</h4>
+          <div class="skills-grid">
+            {items.map((skill) => (
+              <span class="tag">{skill}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .skills-category h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .skills-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

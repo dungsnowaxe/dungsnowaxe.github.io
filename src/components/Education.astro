@@ -1,0 +1,85 @@
+---
+export interface Props {
+  data: {
+    education: Array<{
+      degree: string;
+      institution: string;
+      period: string;
+      description: string;
+    }>;
+  };
+  heading?: string;
+}
+
+const { data, heading = "Education" } = Astro.props;
+const { education } = data;
+---
+
+<section class="section education-section">
+  <div class="container">
+    <h2 class="animate-on-scroll">{heading}</h2>
+    <div class="education-list stagger-children">
+      {education.map((edu) => (
+        <article class="education-item card animate-on-scroll">
+          <div class="education-header">
+            <div class="education-title-group">
+              <h3>{edu.degree}</h3>
+              <span class="education-school">{edu.institution}</span>
+            </div>
+            <span class="date-badge">{edu.period}</span>
+          </div>
+          <p class="education-description">{edu.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .education-item {
+    position: relative;
+  }
+
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .education-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .education-school {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .date-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+
+  .education-description {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>
