@@ -1,0 +1,99 @@
+---
+export interface Props {
+  data: {
+    personalInfo: {
+      fullName: string;
+      jobTitle: string;
+      dateOfBirth: string;
+      phone: string;
+      email: string;
+      address: string;
+    };
+  };
+  labels?: {
+    dateOfBirth?: string;
+    phone?: string;
+    email?: string;
+    address?: string;
+  };
+}
+
+const { data, labels = {} } = Astro.props;
+const { personalInfo } = data;
+const labelDob = labels.dateOfBirth || "Date of Birth";
+const labelPhone = labels.phone || "Phone";
+const labelEmail = labels.email || "Email";
+const labelAddress = labels.address || "Address";
+---
+
+<div class="header">
+  <div class="name-block">
+    <h1>{personalInfo.fullName}</h1>
+    <p class="job-title">{personalInfo.jobTitle}</p>
+  </div>
+  <div class="contact-list">
+    <div class="contact-item">
+      <span class="contact-label">{labelEmail}</span>
+      <span class="contact-value">{personalInfo.email}</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">{labelPhone}</span>
+      <span class="contact-value">{personalInfo.phone}</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">{labelAddress}</span>
+      <span class="contact-value">{personalInfo.address}</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">{labelDob}</span>
+      <span class="contact-value">{personalInfo.dateOfBirth}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .name-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .job-title {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .contact-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+  }
+
+  .contact-value {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    word-break: break-word;
+  }
+</style>

@@ -1,15 +1,22 @@
 ---
 export interface Props {
   currentLang?: 'en' | 'vi';
+  page?: 'home' | 'resume';
 }
 
-const { currentLang = 'en' } = Astro.props;
+const { currentLang = 'en', page = 'home' } = Astro.props;
 const base = import.meta.env.BASE_URL || '/';
-const enUrl = base === '/' ? '/' : `${base}/`;
-const viUrl = base === '/' ? '/vi/' : `${base}/vi/`;
+
+const routes = {
+  home: { en: base === '/' ? '/' : `${base}/`, vi: base === '/' ? '/vi/' : `${base}/vi/` },
+  resume: { en: base === '/' ? '/resume/' : `${base}/resume/`, vi: base === '/' ? '/vi/resume/' : `${base}/vi/resume/` }
+};
+
+const enUrl = routes[page].en;
+const viUrl = routes[page].vi;
 ---
 
-<div class="lang-switcher no-print">
+<div class="lang-switcher">
   <a href={enUrl} class={currentLang === 'en' ? 'active' : ''} aria-label="English">EN</a>
   <span class="divider">/</span>
   <a href={viUrl} class={currentLang === 'vi' ? 'active' : ''} aria-label="Tiếng Việt">VI</a>
@@ -17,40 +24,32 @@ const viUrl = base === '/' ? '/vi/' : `${base}/vi/`;
 
 <style>
   .lang-switcher {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 100;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.3rem;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 0.4rem 0.7rem;
+    font-size: 0.7rem;
   }
 
   .lang-switcher a {
-    color: var(--color-text-muted);
+    color: var(--text-tertiary);
     text-decoration: none;
-    transition: color 0.2s ease;
-    padding: 0.1rem 0.2rem;
+    transition: color 0.2s var(--ease-out);
+    padding: 0.1rem 0.15rem;
   }
 
   .lang-switcher a:hover {
-    color: var(--color-text);
+    color: var(--text);
   }
 
   .lang-switcher a.active {
-    color: var(--color-accent);
+    color: var(--accent);
     font-weight: 600;
   }
 
   .divider {
-    color: var(--color-text-muted);
-    opacity: 0.5;
+    color: var(--text-tertiary);
+    opacity: 0.4;
   }
 
   @media print {

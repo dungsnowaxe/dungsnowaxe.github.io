@@ -6,36 +6,18 @@ export interface Props {
   heading?: string;
 }
 
-const { data, heading = "About Me" } = Astro.props;
-const { aboutMe } = data;
+const { data, heading = "About" } = Astro.props;
 ---
 
-<section class="section about-section animate-on-scroll">
-  <div class="container">
-    <h2>{heading}</h2>
-    <p class="about-text">{aboutMe}</p>
-  </div>
-</section>
+<div class="rail-section">
+  <span class="section-label">{heading}</span>
+  <p class="about-text">{data.aboutMe}</p>
+</div>
 
 <style>
-  .about-section {
-    position: relative;
-  }
-
   .about-text {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: 0.85rem;
     line-height: 1.7;
-    color: var(--color-text-muted);
-    max-width: 70ch;
-  }
-
-  .about-text::first-letter {
-    font-size: 3.5em;
-    float: left;
-    line-height: 0.8;
-    padding-right: 0.1em;
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-weight: 700;
+    color: var(--text-secondary);
   }
 </style>

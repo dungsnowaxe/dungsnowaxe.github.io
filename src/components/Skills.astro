@@ -6,54 +6,53 @@ export interface Props {
   heading?: string;
 }
 
-const { data, heading = "Technical Skills" } = Astro.props;
-const { skills } = data;
+const { data, heading = "Skills" } = Astro.props;
 ---
 
-<section class="section skills-section">
-  <div class="container">
-    <h2 class="animate-on-scroll">{heading}</h2>
-    <div class="skills-content animate-on-scroll">
-      {Object.entries(skills).map(([category, items]) => (
-        <div class="skills-category">
-          <h4>{category}</h4>
-          <div class="skills-grid">
-            {items.map((skill) => (
-              <span class="tag">{skill}</span>
-            ))}
-          </div>
+<div class="rail-section">
+  <span class="section-label">{heading}</span>
+  <div class="skills-list">
+    {Object.entries(data.skills).map(([category, items]) => (
+      <div class="skills-category">
+        <h4>{category}</h4>
+        <div class="skills-tags">
+          {items.map((skill) => (
+            <span class="tag">{skill}</span>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
-</section>
+</div>
 
 <style>
-  .skills-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--space-md);
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
   }
 
-  .skills-category h4 {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-sm);
-    font-weight: 500;
-  }
-
-  .skills-grid {
+  .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--space-1);
   }
 
-  @media (max-width: 640px) {
-    .skills-content {
-      grid-template-columns: 1fr;
-    }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--accent-tertiary-soft);
+    color: var(--accent-tertiary);
+    border: 1px solid oklch(62% 0.065 150 / 0.18);
+    border-radius: var(--radius-sm);
+    transition: all 0.25s var(--ease-out);
+  }
+
+  .tag:hover {
+    background: var(--accent-tertiary);
+    color: var(--bg);
+    transform: translateY(-1px);
   }
 </style>

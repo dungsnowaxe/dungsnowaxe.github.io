@@ -9,39 +9,29 @@ export interface Props {
 }
 
 const { data } = Astro.props;
-const { footer } = data;
 ---
 
-<footer class="footer section animate-on-scroll">
-  <div class="container">
-    <div class="footer-content">
-      <p class="footer-text">{footer.line1}</p>
-      <p class="footer-sub">{footer.line2}</p>
-    </div>
-  </div>
+<footer class="footer reveal">
+  <p class="footer-text">{data.footer.line1}</p>
+  <p class="footer-sub">{data.footer.line2}</p>
 </footer>
 
 <style>
   .footer {
-    border-top: 1px solid var(--color-border);
-    padding: var(--space-lg) 0;
+    padding: var(--space-8) 0 var(--space-4);
     text-align: center;
   }
 
   .footer-text {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-1);
   }
 
   .footer-sub {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
     font-style: italic;
-  }
-
-  .accent {
-    color: var(--color-accent);
   }
 </style>

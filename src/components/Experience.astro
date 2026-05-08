@@ -12,30 +12,27 @@ export interface Props {
 }
 
 const { data, heading = "Experience" } = Astro.props;
-const { experience } = data;
 ---
 
-<section class="section experience-section">
-  <div class="container">
-    <h2 class="animate-on-scroll">{heading}</h2>
-    <div class="experience-list stagger-children">
-      {experience.map((job) => (
-        <article class="experience-item card animate-on-scroll">
-          <div class="experience-header">
-            <div class="experience-title-group">
-              <h3>{job.title}</h3>
-              <span class="experience-company">{job.company}</span>
-            </div>
-            <span class="date-badge">{job.period}</span>
+<section class="experience-section reveal">
+  <h2>{heading}</h2>
+  <div class="experience-list">
+    {data.experience.map((job) => (
+      <article class="experience-entry">
+        <div class="experience-header">
+          <div class="experience-title-group">
+            <h3>{job.title}</h3>
+            <span class="experience-company">{job.company}</span>
           </div>
-          <ul class="experience-details">
-            {job.details.map((detail) => (
-              <li>{detail}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
-    </div>
+          <span class="date-badge">{job.period}</span>
+        </div>
+        <ul class="experience-details">
+          {job.details.map((detail) => (
+            <li>{detail}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
   </div>
 </section>
 
@@ -43,78 +40,83 @@ const { experience } = data;
   .experience-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
   }
 
-  .experience-item {
-    position: relative;
+  .experience-entry {
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .experience-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--color-accent), transparent);
-    border-radius: 3px;
-    opacity: 0.5;
+  .experience-entry:first-child {
+    padding-top: 0;
+  }
+
+  .experience-entry:last-child {
+    border-bottom: none;
   }
 
   .experience-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
-    padding-left: var(--space-sm);
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
   }
 
   .experience-title-group {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: var(--space-1);
   }
 
   .experience-company {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    color: var(--accent-secondary);
+    letter-spacing: 0.02em;
   }
 
   .date-badge {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
-    background: var(--color-accent-soft);
-    color: var(--color-accent);
-    border-radius: var(--radius);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background: var(--accent-secondary-soft);
+    color: var(--accent-secondary);
+    border-radius: var(--radius-sm);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .experience-details {
     list-style: none;
-    padding-left: var(--space-sm);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
 
   .experience-details li {
     position: relative;
-    padding-left: 1.2rem;
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    padding-left: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.65;
   }
 
   .experience-details li::before {
-    content: '›';
+    content: '';
     position: absolute;
     left: 0;
-    color: var(--color-accent);
-    font-weight: bold;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .experience-header {
+      flex-direction: column;
+      gap: var(--space-2);
+    }
   }
 </style>

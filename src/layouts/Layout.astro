@@ -8,7 +8,7 @@ export interface Props {
   lang?: string;
 }
 
-const { title = "Alex Chen — Frontend Developer", description = "Personal CV", lang = "en" } = Astro.props;
+const { title = "Personal CV", description = "Personal CV", lang = "en" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,36 +18,41 @@ const { title = "Alex Chen — Frontend Developer", description = "Personal CV",
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <title>{title}</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <script is:inline>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
   <slot />
 
-  <script>
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
+  <script is:inline>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.classList.add('theme-transition');
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      setTimeout(function() { html.classList.remove('theme-transition'); }, 500);
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, observerOptions);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.animate-on-scroll');
-      animatedElements.forEach(el => observer.observe(el));
-    });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
   </script>
 </body>
 </html>
