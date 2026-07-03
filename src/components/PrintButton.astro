@@ -28,13 +28,13 @@
     font-size: 0.75rem;
     font-weight: 500;
     cursor: pointer;
-    box-shadow: 0 2px 12px oklch(68% 0.18 55 / 0.25);
+    box-shadow: 0 2px 12px color-mix(in oklch, var(--accent) 25%, transparent);
     transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
   }
 
   .print-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px oklch(68% 0.18 55 / 0.35);
+    box-shadow: 0 4px 20px color-mix(in oklch, var(--accent) 35%, transparent);
   }
 
   .print-button:active {
@@ -43,8 +43,8 @@
 
   @media (max-width: 768px) {
     .print-button {
-      bottom: var(--space-3);
-      right: var(--space-3);
+      bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+      right: calc(var(--space-3) + env(safe-area-inset-right));
       padding: 0.5rem 0.8rem;
     }
   }

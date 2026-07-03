@@ -35,7 +35,11 @@ const viUrl = routes[page].vi;
     color: var(--text-tertiary);
     text-decoration: none;
     transition: color 0.2s var(--ease-out);
-    padding: 0.1rem 0.15rem;
+    /* Enforce a ≥44px touch target while keeping the label visually compact */
+    padding: 0.6rem 0.3rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .lang-switcher a:hover {

@@ -1,14 +1,15 @@
 ---
+import { Picture } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import portrait from '../assets/portrait.jpg';
 import cvData from '../data/cv.json';
 
 const { personalInfo } = cvData;
 const title = `${personalInfo.fullName} — ${personalInfo.jobTitle}`;
 const base = import.meta.env.BASE_URL || '/';
 const resumeUrl = base === '/' ? '/resume/' : `${base}/resume/`;
-const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
 ---
 
 <Layout title={title} description={`Personal homepage of ${personalInfo.fullName}`} lang="en">
@@ -17,9 +18,9 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
     <ThemeToggle />
   </div>
 
-  <div class="hero">
+  <main id="main" class="hero">
     <div class="hero-portrait">
-      <img src={photoUrl} alt={`${personalInfo.fullName}, Senior Frontend Developer`} />
+      <Picture src={portrait} alt={`${personalInfo.fullName}, Senior Frontend Developer`} widths={[480, 960, 1280, 1920]} sizes="50vw" loading="eager" fetchpriority="high" formats={['avif', 'webp']} />
     </div>
     <div class="hero-content">
       <span class="hero-label">{personalInfo.jobTitle}</span>
@@ -43,7 +44,7 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
         </a>
       </div>
     </div>
-  </div>
+</main>
 </Layout>
 
 <style>
@@ -51,6 +52,7 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .hero-portrait {
@@ -58,9 +60,10 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
     overflow: hidden;
   }
 
-  .hero-portrait img {
+  .hero-portrait :global(img) {
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     object-fit: cover;
     object-position: center 20%;
   }
@@ -118,6 +121,10 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
     opacity: 1;
   }
 
+  .hero-link:active {
+    transform: translateY(0) scale(0.98);
+  }
+
   .hero-link.primary {
     background: var(--accent);
     color: var(--bg);
@@ -126,7 +133,7 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
   }
 
   .hero-link.primary:hover {
-    box-shadow: 0 4px 16px oklch(68% 0.18 55 / 0.3);
+    box-shadow: 0 4px 16px color-mix(in oklch, var(--accent) 30%, transparent);
     border-color: var(--accent);
     color: var(--bg);
   }
@@ -141,12 +148,14 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
       min-height: auto;
     }
 
-    .hero-portrait img {
-      height: 45vh;
+    .hero-portrait :global(img) {
+      height: 50vh;
+      height: 50dvh;
     }
 
     .hero-content {
       padding: var(--space-6) var(--space-4);
+      padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom));
     }
 
     .hero-name {
@@ -154,7 +163,14 @@ const photoUrl = `${base}${base.endsWith('/') ? '' : '/'}ABMM0487ds.jpg`;
     }
 
     .hero-links {
-      gap: var(--space-2);
+      gap: var(--space-3);
+    }
+
+    .hero-link {
+      flex: 1 1 auto;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      min-height: 44px;
     }
   }
 </style>
