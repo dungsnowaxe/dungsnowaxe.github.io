@@ -25,7 +25,7 @@ Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng cá
 - **Period:** 2023 — Hiện tại
 - **Details:**
   - Thiết kế kiến trúc và phát hành ứng dụng phân tích tiền điện tử đa nền tảng phục vụ 6.000+ ngườii dùng hoạt động hàng tháng với khả năng trực quan hóa dữ liệu thị trường theo thờii gian thực
-  - Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design), giảm 35% kích thước gói bundle và rút ngắn thờii gian tải trang ban đầu
+  - Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design)
   - Dẫn dắt phát triển toàn diện trang landing page và bảng điều khiển phân tích Birdeye Data, chịu trách nhiệm cả triển khai UI/UX và tích hợp API
   - Phối hợp chặt chẽ với các đội ngũ sản phẩm và thiết kế để lặp lại nhanh chóng các tính năng hướng đến người dùng trong môi trường startup nhịp độ nhanh
 
@@ -51,7 +51,7 @@ Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng cá
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
-  - Phát triển và duy trì các trang landing page marketing và giao diện sản phẩm cốt lõi sử dụng Vue.js và Nuxt, thúc đẩy chuyển đổi ngườii dùng và tương tác
+  - Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác, tương tự Mailchimp nhưng với phạm vi kênh rộng hơn
   - Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng
   - Phối hợp với đội ngũ backend và thiết kế để triển khai tính năng theo phương pháp agile trong môi trường startup giai đoạn đầu
 
