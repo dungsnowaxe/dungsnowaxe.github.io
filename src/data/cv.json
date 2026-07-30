@@ -2,10 +2,8 @@
   "personalInfo": {
     "fullName": "Đoàn Anh Dũng",
     "jobTitle": "Senior Frontend Developer",
-    "dateOfBirth": "October 13, 1996",
     "phone": "+84 338-701-246",
-    "email": "doananhdung1310@gmail.com",
-    "address": "360 Giai Phong, Phuong Liet, Ha Noi"
+    "email": "doananhdung1310@gmail.com"
   },
   "aboutMe": "Frontend engineer with 6+ years of experience building scalable web and mobile applications across fintech, cybersecurity, and SaaS domains. I specialize in React, Next.js, and Vue ecosystems, with a strong track record of delivering high-performance user interfaces, leading frontend teams, and driving technical decisions that align engineering with business outcomes.",
   "experience": [

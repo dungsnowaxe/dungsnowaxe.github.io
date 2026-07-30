@@ -9,10 +9,8 @@
 
 - **Full Name:** Đoàn Anh Dũng
 - **Job Title:** Kỹ sư Frontend
-- **Date of Birth:** 13 tháng 10, 1996
 - **Phone:** +84 338-701-246
 - **Email:** doananhdung1310@gmail.com
-- **Address:** 360 Giải Phóng, Phương Liệt, Hà Nội
 
 ## About Me
 

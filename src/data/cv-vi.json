@@ -2,10 +2,8 @@
   "personalInfo": {
     "fullName": "Đoàn Anh Dũng",
     "jobTitle": "Kỹ sư Frontend",
-    "dateOfBirth": "13 tháng 10, 1996",
     "phone": "+84 338-701-246",
-    "email": "doananhdung1310@gmail.com",
-    "address": "360 Giải Phóng, Phương Liệt, Hà Nội"
+    "email": "doananhdung1310@gmail.com"
   },
   "aboutMe": "Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng các ứng dụng web và di động có khả năng mở rộng trong các lĩnh vực fintech, an ninh mạng và SaaS. Tôi chuyên sâu về hệ sinh thái React, Next.js và Vue, với thành tích nổi bật trong việc phát triển giao diện ngườii dùng hiệu suất cao, dẫn dắt đội ngũ frontend và đưa ra các quyết định kỹ thuật phù hợp với mục tiêu kinh doanh.",
   "experience": [

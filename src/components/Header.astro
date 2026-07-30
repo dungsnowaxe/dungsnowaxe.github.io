@@ -4,26 +4,20 @@ export interface Props {
     personalInfo: {
       fullName: string;
       jobTitle: string;
-      dateOfBirth: string;
       phone: string;
       email: string;
-      address: string;
     };
   };
   labels?: {
-    dateOfBirth?: string;
     phone?: string;
     email?: string;
-    address?: string;
   };
 }
 
 const { data, labels = {} } = Astro.props;
 const { personalInfo } = data;
-const labelDob = labels.dateOfBirth || "Date of Birth";
 const labelPhone = labels.phone || "Phone";
 const labelEmail = labels.email || "Email";
-const labelAddress = labels.address || "Address";
 ---
 
 <div class="header">
@@ -39,14 +33,6 @@ const labelAddress = labels.address || "Address";
     <div class="contact-item">
       <span class="contact-label">{labelPhone}</span>
       <span class="contact-value">{personalInfo.phone}</span>
-    </div>
-    <div class="contact-item">
-      <span class="contact-label">{labelAddress}</span>
-      <span class="contact-value">{personalInfo.address}</span>
-    </div>
-    <div class="contact-item">
-      <span class="contact-label">{labelDob}</span>
-      <span class="contact-value">{personalInfo.dateOfBirth}</span>
     </div>
   </div>
 </div>

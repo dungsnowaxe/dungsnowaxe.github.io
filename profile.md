@@ -10,10 +10,8 @@
 
 - **Full Name:** Đoàn Anh Dũng
 - **Job Title:** Senior Frontend Developer
-- **Date of Birth:** October 13, 1996
 - **Phone:** +84 338-701-246
 - **Email:** doananhdung1310@gmail.com
-- **Address:** 360 Giai Phong, Phuong Liet, Ha Noi
 
 ## About Me
 
