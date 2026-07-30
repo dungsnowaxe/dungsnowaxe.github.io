@@ -50,7 +50,7 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
-  - Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels, similar to Mailchimp with broader channel coverage
+  - Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels
   - Integrated RESTful APIs and third-party services to deliver seamless data flows across the application
   - Collaborated with backend and design teams to ship features iteratively in an agile, early-stage startup environment
 

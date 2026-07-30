@@ -45,7 +45,7 @@
       "company": "Gobysend",
       "period": "2019 — 2021",
       "details": [
-        "Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác, tương tự Mailchimp nhưng với phạm vi kênh rộng hơn",
+        "Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác",
         "Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng",
         "Phối hợp với đội ngũ backend và thiết kế để triển khai tính năng theo phương pháp agile trong môi trường startup giai đoạn đầu"
       ]
