@@ -111,7 +111,6 @@ function parseMarkdown(content) {
         let fieldName = key;
         if (key === 'fullname') fieldName = 'fullName';
         if (key === 'jobtitle') fieldName = 'jobTitle';
-        if (key === 'dateofbirth') fieldName = 'dateOfBirth';
         data.personalInfo[fieldName] = match[2].trim();
       }
       continue;

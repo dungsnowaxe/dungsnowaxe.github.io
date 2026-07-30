@@ -10,10 +10,8 @@
 
 - **Full Name:** Đoàn Anh Dũng
 - **Job Title:** Senior Frontend Developer
-- **Date of Birth:** October 13, 1996
 - **Phone:** +84 338-701-246
 - **Email:** doananhdung1310@gmail.com
-- **Address:** 360 Giai Phong, Phuong Liet, Ha Noi
 
 ## About Me
 
@@ -26,7 +24,7 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
 - **Period:** 2023 — Present
 - **Details:**
   - Architected and shipped a cross-platform crypto analytics mobile app serving 6,000+ monthly active users with real-time market data visualization
-  - Maintained and optimized the legacy Birdeye web platform (React + Ant Design), improving bundle size by 35% and reducing initial load time
+  - Maintained and optimized the legacy Birdeye web platform (React + Ant Design)
   - Led end-to-end development of Birdeye Data's landing page and analytics dashboard, owning both UI/UX implementation and API integration
   - Collaborated closely with product and design teams to iterate rapidly on user-facing features in a fast-paced startup environment
 
@@ -52,7 +50,7 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
-  - Developed and maintained marketing landing pages and core product interfaces using Vue.js and Nuxt, driving user acquisition and engagement
+  - Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels
   - Integrated RESTful APIs and third-party services to deliver seamless data flows across the application
   - Collaborated with backend and design teams to ship features iteratively in an agile, early-stage startup environment
 
