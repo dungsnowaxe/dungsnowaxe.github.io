@@ -72,9 +72,6 @@ React, Vue, Astro, Next.js, Tailwind CSS, GSAP, Electron, React Native
 ### Tools & Practices
 Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 
-### Specializations
-Web Accessibility (WCAG), Performance Optimization, Responsive Design, Animation & Motion, Design Systems
-
 ## Footer
 
 Built with Astro & crafted with attention to detail.

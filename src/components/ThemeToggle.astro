@@ -1,52 +1,83 @@
 ---
+export interface Props {
+  lang?: 'en' | 'vi';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const labels = lang === 'vi'
+  ? { light: 'Giao diện sáng', dark: 'Giao diện tối', auto: 'Theo hệ thống' }
+  : { light: 'Light theme', dark: 'Dark theme', auto: 'System theme' };
 ---
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-  <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-  </svg>
-  <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="5"></circle>
-    <line x1="12" y1="1" x2="12" y2="3"></line>
-    <line x1="12" y1="21" x2="12" y2="23"></line>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-    <line x1="1" y1="12" x2="3" y2="12"></line>
-    <line x1="21" y1="12" x2="23" y2="12"></line>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-  </svg>
-</button>
+<div class="theme-control" role="group" aria-label="Theme">
+  <button type="button" class="mode mode-light" onclick="setThemeMode('light')" aria-label={labels.light} title={labels.light}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2"/><path d="M12 20v2"/>
+      <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+      <path d="M2 12h2"/><path d="M20 12h2"/>
+      <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+    </svg>
+  </button>
+  <button type="button" class="mode mode-dark" onclick="setThemeMode('dark')" aria-label={labels.dark} title={labels.dark}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+    </svg>
+  </button>
+  <button type="button" class="mode mode-auto" onclick="setThemeMode('auto')" aria-label={labels.auto} title={labels.auto}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="13" rx="2"/>
+      <path d="M8 21h8"/><path d="M12 17v4"/>
+    </svg>
+  </button>
+</div>
 
 <style>
-  .theme-toggle {
+  .theme-control {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: none;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    color: var(--text-tertiary);
-    transition: color 0.2s var(--ease-out);
-    padding: 0;
+    gap: 2px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px;
   }
 
-  .theme-toggle:hover {
+  .mode {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    transition: color 0.3s var(--ease-spring),
+                background-color 0.3s var(--ease-spring),
+                transform 0.2s var(--ease-spring);
+  }
+
+  .mode:hover {
     color: var(--text);
   }
 
-  .icon-sun {
-    display: none;
+  .mode:active {
+    transform: scale(0.92);
   }
 
-  :global([data-theme="dark"]) .icon-sun {
-    display: block;
+  :global([data-theme-mode="light"]) .mode-light,
+  :global([data-theme-mode="dark"]) .mode-dark,
+  :global([data-theme-mode="auto"]) .mode-auto {
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
-  :global([data-theme="dark"]) .icon-moon {
-    display: none;
+  @media print {
+    .theme-control {
+      display: none !important;
+    }
   }
 </style>

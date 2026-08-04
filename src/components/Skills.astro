@@ -7,18 +7,52 @@ export interface Props {
 }
 
 const { data, heading = "Skills" } = Astro.props;
+
+// Brand icons from simple-icons (served as SVG, recolored via CSS mask
+// so they always follow the current text color in both themes and print)
+const iconMap: Record<string, string[]> = {
+  "TypeScript": ["typescript"],
+  "JavaScript (ES6+)": ["javascript"],
+  "HTML5": ["html5"],
+  "CSS3 / SCSS": ["css"],
+  "React": ["react"],
+  "Vue": ["vuedotjs"],
+  "Astro": ["astro"],
+  "Next.js": ["nextdotjs"],
+  "Tailwind CSS": ["tailwindcss"],
+  "GSAP": ["greensock"],
+  "Electron": ["electron"],
+  "React Native": ["react"],
+  "Git & GitHub": ["git"],
+  "Figma": ["figma"],
+  "CI/CD": ["githubactions"],
+  "Webpack / Vite": ["webpack", "vite"],
+  "Docker": ["docker"],
+};
 ---
 
-<div class="rail-section">
+<div class="rail-section reveal">
   <span class="section-label">{heading}</span>
   <div class="skills-list">
     {Object.entries(data.skills).map(([category, items]) => (
       <div class="skills-category">
         <h4>{category}</h4>
         <div class="skills-tags">
-          {items.map((skill) => (
-            <span class="tag">{skill}</span>
-          ))}
+          {items.map((skill) => {
+            const slugs = iconMap[skill] || [];
+            return (
+              <span class="tag">
+                {slugs.map((slug) => (
+                  <span
+                    class="tag-icon"
+                    aria-hidden="true"
+                    style={`-webkit-mask-image: url('https://cdn.simpleicons.org/${slug}'); mask-image: url('https://cdn.simpleicons.org/${slug}');`}
+                  ></span>
+                ))}
+                {skill}
+              </span>
+            );
+          })}
         </div>
       </div>
     ))}
@@ -29,30 +63,50 @@ const { data, heading = "Skills" } = Astro.props;
   .skills-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
   }
 
   .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-1);
+    gap: var(--space-2);
   }
 
   .tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     font-family: var(--font-mono);
     font-size: 0.68rem;
-    padding: 0.2rem 0.5rem;
-    background: var(--accent-tertiary-soft);
-    color: var(--accent-tertiary);
-    border: 1px solid oklch(62% 0.065 150 / 0.18);
-    border-radius: var(--radius-sm);
-    transition: all 0.25s var(--ease-out);
+    font-weight: 400;
+    padding: 0.28rem 0.6rem;
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: background-color 0.3s var(--ease-spring),
+                color 0.3s var(--ease-spring),
+                border-color 0.3s var(--ease-spring),
+                transform 0.3s var(--ease-spring);
+  }
+
+  .tag-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex-shrink: 0;
+    background: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
   }
 
   .tag:hover {
-    background: var(--accent-tertiary);
-    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
     transform: translateY(-1px);
   }
 

@@ -9,15 +9,15 @@ export interface Props {
 const { data, heading = "About" } = Astro.props;
 ---
 
-<div class="rail-section">
+<div class="rail-section reveal">
   <span class="section-label">{heading}</span>
   <p class="about-text">{data.aboutMe}</p>
 </div>
 
 <style>
   .about-text {
-    font-size: 0.85rem;
-    line-height: 1.7;
+    font-size: 0.875rem;
+    line-height: 1.75;
     color: var(--text-secondary);
   }
 </style>

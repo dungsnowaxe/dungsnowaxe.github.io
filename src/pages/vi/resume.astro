@@ -23,7 +23,7 @@ const headerLabels = {
 <Layout title={title} description={`CV cá nhân của ${personalInfo.fullName}`} lang="vi">
   <div class="top-controls">
     <LanguageSwitcher currentLang="vi" page="resume" />
-    <ThemeToggle />
+    <ThemeToggle lang="vi" />
   </div>
   <div class="cv-grid">
     <aside class="left-rail">
@@ -37,5 +37,5 @@ const headerLabels = {
       <Footer data={cvData} />
     </main>
   </div>
-  <PrintButton />
+  <PrintButton lang="vi" />
 </Layout>

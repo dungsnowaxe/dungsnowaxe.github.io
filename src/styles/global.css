@@ -1,21 +1,40 @@
-:root {
-  --bg: oklch(97.5% 0.006 75);
-  --surface: oklch(94.5% 0.006 75);
-  --surface-raised: oklch(92% 0.006 75);
-  --text: oklch(17% 0.012 55);
-  --text-secondary: oklch(46% 0.012 55);
-  --text-tertiary: oklch(62% 0.01 55);
-  /* Lowered accent L from 68% to 62% so links clear WCAG AA (6.26:1 vs prior ~4.4:1) */
-  --accent: oklch(62% 0.18 55);
-  --accent-secondary: oklch(52% 0.13 25);
-  --accent-tertiary: oklch(62% 0.065 150);
-  --accent-soft: oklch(62% 0.18 55 / 0.1);
-  --accent-secondary-soft: oklch(52% 0.13 25 / 0.08);
-  --accent-tertiary-soft: oklch(62% 0.065 150 / 0.1);
-  --border: oklch(55% 0.006 75 / 0.18);
-  --border-strong: oklch(55% 0.006 75 / 0.35);
+/* ============================================================
+   Design tokens — Editorial Luxury
+   Warm bone (light) / deep espresso (dark), one burnt-orange
+   accent, Fraunces display serif, Manrope body (EN),
+   Be Vietnam Pro body (VI), JetBrains Mono for data.
+   ============================================================ */
 
-  --font-primary: 'Sora', sans-serif;
+:root {
+  /* Surfaces — warm bone family, single warm hue */
+  --bg: oklch(96.8% 0.012 82);
+  --surface: oklch(94.2% 0.014 80);
+  --surface-raised: oklch(98.6% 0.01 88);
+
+  /* Ink — espresso, never pure black */
+  --text: oklch(24% 0.02 55);
+  --text-secondary: oklch(42% 0.02 58);
+  --text-tertiary: oklch(52% 0.018 60);
+
+  /* Single accent — desaturated burnt orange (AA on bone) */
+  --accent: oklch(52% 0.14 47);
+  --accent-strong: oklch(46% 0.13 45);
+  --accent-soft: oklch(52% 0.14 47 / 0.1);
+  --accent-softer: oklch(52% 0.14 47 / 0.06);
+  --on-accent: oklch(98% 0.01 85);
+
+  /* Hairlines */
+  --border: oklch(50% 0.015 70 / 0.16);
+  --border-strong: oklch(48% 0.02 65 / 0.32);
+
+  /* Tinted ambient shadow — carries the warm hue */
+  --shadow-color: oklch(30% 0.03 55 / 0.1);
+  --shadow-ambient: 0 1px 2px var(--shadow-color), 0 8px 32px -8px var(--shadow-color);
+  --shadow-lifted: 0 2px 4px var(--shadow-color), 0 16px 48px -12px oklch(30% 0.03 55 / 0.18);
+
+  /* Type */
+  --font-display: 'Fraunces', 'Be Vietnam Pro', Georgia, serif;
+  --font-body: 'Manrope', 'Be Vietnam Pro', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --space-1: 0.25rem;
@@ -28,30 +47,42 @@
   --space-8: 4rem;
   --space-9: 6rem;
 
-  --rail-width: 300px;
-  --container-max: 1100px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --rail-width: 320px;
+  --container-max: 1120px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Vietnamese gets its dedicated typeface; Fraunces keeps display
+   duties — its Vietnamese subset renders diacritics natively. */
+html[lang="vi"] {
+  --font-body: 'Be Vietnam Pro', 'Manrope', system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg: oklch(14% 0.008 55);
-  --surface: oklch(18% 0.008 55);
-  --surface-raised: oklch(22% 0.008 55);
-  --text: oklch(95% 0.005 75);
-  /* Raised from 72%/58% to clear WCAG AA (was 3.28:1 / 1.62:1; now 7.15:1 / 5.47:1) */
-  --text-secondary: oklch(84% 0.01 55);
-  --text-tertiary: oklch(80% 0.01 55);
-  /* Accents raised to pass AA on dark bg (now 5.69:1 / 5.31:1 / 4.88:1) */
-  --accent: oklch(75% 0.17 60);
-  --accent-secondary: oklch(75% 0.13 25);
-  --accent-tertiary: oklch(77% 0.06 150);
-  --accent-soft: oklch(75% 0.17 60 / 0.16);
-  --accent-secondary-soft: oklch(75% 0.13 25 / 0.14);
-  --accent-tertiary-soft: oklch(77% 0.06 150 / 0.16);
-  --border: oklch(70% 0.005 75 / 0.16);
-  --border-strong: oklch(70% 0.005 75 / 0.28);
+  --bg: oklch(16.5% 0.012 55);
+  --surface: oklch(20.5% 0.014 56);
+  --surface-raised: oklch(25% 0.015 58);
+
+  --text: oklch(93.5% 0.012 80);
+  --text-secondary: oklch(80% 0.015 70);
+  --text-tertiary: oklch(71% 0.015 68);
+
+  --accent: oklch(74% 0.14 55);
+  --accent-strong: oklch(80% 0.13 58);
+  --accent-soft: oklch(74% 0.14 55 / 0.16);
+  --accent-softer: oklch(74% 0.14 55 / 0.1);
+  --on-accent: oklch(18% 0.015 55);
+
+  --border: oklch(72% 0.01 70 / 0.16);
+  --border-strong: oklch(72% 0.012 70 / 0.3);
+
+  --shadow-color: oklch(8% 0.008 55 / 0.5);
+  --shadow-ambient: 0 1px 2px var(--shadow-color), 0 8px 32px -8px var(--shadow-color);
+  --shadow-lifted: 0 2px 4px var(--shadow-color), 0 16px 48px -12px oklch(8% 0.008 55 / 0.7);
 }
 
 html.theme-transition,
@@ -78,7 +109,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -93,14 +123,12 @@ html {
   }
 }
 
-/* Visible focus for keyboard users; mouse clicks keep the clean look */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
-/* Skip link — invisible until focused by keyboard */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -108,7 +136,7 @@ html {
   z-index: 200;
   padding: 0.6rem 1rem;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -125,44 +153,80 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-primary);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.6;
   min-height: 100vh;
   min-height: 100dvh;
 }
 
+/* Film grain — breaks digital flatness. Fixed, non-interactive. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] body::after {
+  opacity: 0.055;
+}
+
 h1, h2, h3, h4 {
-  font-family: var(--font-primary);
+  font-family: var(--font-display);
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 560;
+  font-variation-settings: 'opsz' 100;
+  letter-spacing: -0.015em;
 }
 
+/* Vietnamese diacritics stack vertically — loosen tracking slightly */
+html[lang="vi"] h1 {
+  letter-spacing: 0;
+}
+
+/* Section headings: mono eyebrow + hairline rule */
 h2 {
-  font-size: 0.8rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: var(--space-5);
+  letter-spacing: 0.18em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-6);
+}
+
+h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
 h3 {
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  font-weight: 700;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+  font-variation-settings: 'opsz' 40;
+  letter-spacing: -0.01em;
 }
 
 h4 {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--text-tertiary);
   margin-bottom: var(--space-2);
 }
@@ -171,13 +235,14 @@ p {
   font-size: 0.9375rem;
   color: var(--text-secondary);
   max-width: 65ch;
-  line-height: 1.7;
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: opacity 0.2s var(--ease-out);
+  transition: opacity 0.25s var(--ease-out);
 }
 
 a:hover {
@@ -187,25 +252,25 @@ a:hover {
 .cv-grid {
   display: grid;
   grid-template-columns: var(--rail-width) 1fr;
-  gap: var(--space-8);
+  gap: var(--space-9);
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: var(--space-7) var(--space-5);
+  padding: var(--space-8) var(--space-6);
   min-height: 100vh;
   min-height: 100dvh;
 }
 
 .left-rail {
   position: sticky;
-  top: var(--space-6);
+  top: var(--space-7);
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-6);
 }
 
 .rail-section {
-  padding-bottom: var(--space-5);
+  padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
 }
 
@@ -215,20 +280,31 @@ a:hover {
 }
 
 .section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   color: var(--text-tertiary);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
   font-weight: 500;
-  display: block;
+}
+
+.section-label::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 .main-content {
   min-width: 0;
 }
 
+/* Floating glass control island */
 .top-controls {
   position: fixed;
   top: calc(var(--space-4) + env(safe-area-inset-top));
@@ -236,39 +312,35 @@ a:hover {
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  background: var(--surface);
+  gap: var(--space-1);
+  background: color-mix(in oklch, var(--surface-raised) 72%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  padding: var(--space-1);
+  box-shadow: var(--shadow-ambient);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Scroll entry — gentle, heavy fade-up with defocus */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s var(--ease-out),
-              transform 0.5s var(--ease-out);
+  transform: translateY(20px);
+  filter: blur(6px);
+  transition: opacity 0.8s var(--ease-spring),
+              transform 0.8s var(--ease-spring),
+              filter 0.8s var(--ease-spring);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
 }
 
 ::-webkit-scrollbar {
@@ -290,15 +362,19 @@ a:hover {
 
 @media (max-width: 900px) {
   :root {
-    --rail-width: 260px;
+    --rail-width: 280px;
+  }
+
+  .cv-grid {
+    gap: var(--space-7);
   }
 }
 
 @media (max-width: 768px) {
   .cv-grid {
     grid-template-columns: 1fr;
-    padding: var(--space-4);
-    gap: var(--space-6);
+    padding: var(--space-5) var(--space-4);
+    gap: var(--space-7);
   }
 
   .left-rail {

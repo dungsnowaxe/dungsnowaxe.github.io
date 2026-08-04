@@ -1,13 +1,21 @@
 ---
+export interface Props {
+  lang?: 'en' | 'vi';
+}
+
+const { lang = 'en' } = Astro.props;
+const label = lang === 'vi' ? 'Lưu PDF' : 'Save PDF';
 ---
 
-<button class="print-button" onclick="window.print()" aria-label="Download as PDF">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="6 9 6 2 18 2 18 9"></polyline>
-    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-    <rect x="6" y="14" width="12" height="8"></rect>
-  </svg>
-  <span>Save PDF</span>
+<button class="print-button" onclick="window.print()" aria-label={lang === 'vi' ? 'Tải CV dạng PDF' : 'Download resume as PDF'}>
+  <span class="print-label">{label}</span>
+  <span class="print-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v12"></path>
+      <path d="m7 10 5 5 5-5"></path>
+      <path d="M5 21h14"></path>
+    </svg>
+  </span>
 </button>
 
 <style>
@@ -19,33 +27,56 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    padding: 0.6rem 1rem;
+    padding: 0.35rem 0.35rem 0.35rem 1.1rem;
     background: var(--accent);
-    color: var(--bg);
+    color: var(--on-accent);
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 999px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 500;
+    letter-spacing: 0.04em;
     cursor: pointer;
-    box-shadow: 0 2px 12px color-mix(in oklch, var(--accent) 25%, transparent);
-    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+    box-shadow: var(--shadow-lifted);
+    transition: transform 0.35s var(--ease-spring),
+                box-shadow 0.35s var(--ease-spring),
+                background-color 0.35s var(--ease-spring);
+  }
+
+  .print-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--on-accent) 18%, transparent);
+    transition: transform 0.35s var(--ease-spring);
   }
 
   .print-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px color-mix(in oklch, var(--accent) 35%, transparent);
+    background: var(--accent-strong);
+  }
+
+  .print-button:hover .print-icon {
+    transform: translateY(1px) scale(1.06);
   }
 
   .print-button:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
   }
 
   @media (max-width: 768px) {
     .print-button {
-      bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
-      right: calc(var(--space-3) + env(safe-area-inset-right));
-      padding: 0.5rem 0.8rem;
+      bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
+      right: calc(var(--space-4) + env(safe-area-inset-right));
+    }
+  }
+
+  @media print {
+    .print-button {
+      display: none !important;
     }
   }
 </style>

@@ -82,13 +82,6 @@
       "CI/CD",
       "Webpack / Vite",
       "Docker"
-    ],
-    "Chuyên môn sâu": [
-      "Web Accessibility (WCAG)",
-      "Tối ưu hiệu suất",
-      "Thiết kế Responsive",
-      "Animation & Motion",
-      "Design Systems"
     ]
   },
   "footer": {

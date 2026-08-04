@@ -18,7 +18,7 @@ const title = `${personalInfo.fullName} — ${personalInfo.jobTitle}`;
 <Layout title={title} description={`Personal CV of ${personalInfo.fullName}`} lang="en">
   <div class="top-controls">
     <LanguageSwitcher currentLang="en" page="resume" />
-    <ThemeToggle />
+    <ThemeToggle lang="en" />
   </div>
   <div class="cv-grid">
     <aside class="left-rail">
@@ -32,5 +32,5 @@ const title = `${personalInfo.fullName} — ${personalInfo.jobTitle}`;
       <Footer data={cvData} />
     </main>
   </div>
-  <PrintButton />
+  <PrintButton lang="en" />
 </Layout>

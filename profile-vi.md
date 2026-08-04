@@ -71,9 +71,6 @@ React, Vue, Astro, Next.js, Tailwind CSS, GSAP, Electron, React Native
 ### Công cụ & Quy trình
 Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 
-### Chuyên môn sâu
-Web Accessibility (WCAG), Tối ưu hiệu suất, Thiết kế Responsive, Animation & Motion, Design Systems
-
 ## Footer
 
 Xây dựng bằng Astro & chăm chút từng chi tiết.

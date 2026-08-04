@@ -1,20 +1,27 @@
+/* ============================================================
+   Print / PDF export — forces a clean light document regardless
+   of the on-screen theme, hides UI chrome, protects entries
+   from awkward page breaks.
+   ============================================================ */
+
 @media print {
   :root,
   [data-theme="dark"] {
-    --bg: oklch(99% 0.003 75);
-    --surface: oklch(97% 0.003 75);
-    --surface-raised: oklch(95% 0.003 75);
-    --text: oklch(15% 0.01 55);
-    --text-secondary: oklch(40% 0.01 55);
-    --text-tertiary: oklch(55% 0.01 55);
-    --accent: oklch(55% 0.15 30);
-    --accent-secondary: oklch(45% 0.12 25);
-    --accent-tertiary: oklch(50% 0.05 150);
-    --accent-soft: oklch(55% 0.15 30 / 0.08);
-    --accent-secondary-soft: oklch(45% 0.12 25 / 0.06);
-    --accent-tertiary-soft: oklch(50% 0.05 150 / 0.08);
-    --border: oklch(60% 0.005 75 / 0.12);
-    --border-strong: oklch(60% 0.005 75 / 0.25);
+    --bg: oklch(99% 0.005 85);
+    --surface: oklch(97% 0.005 82);
+    --surface-raised: oklch(98.5% 0.005 85);
+    --text: oklch(20% 0.015 55);
+    --text-secondary: oklch(38% 0.015 58);
+    --text-tertiary: oklch(50% 0.015 60);
+    --accent: oklch(48% 0.13 45);
+    --accent-strong: oklch(44% 0.12 45);
+    --accent-soft: oklch(48% 0.13 45 / 0.1);
+    --accent-softer: oklch(48% 0.13 45 / 0.06);
+    --on-accent: oklch(99% 0.005 85);
+    --border: oklch(55% 0.01 70 / 0.18);
+    --border-strong: oklch(55% 0.01 70 / 0.3);
+    --shadow-ambient: none;
+    --shadow-lifted: none;
 
     --space-1: 0.15rem;
     --space-2: 0.3rem;
@@ -26,7 +33,7 @@
     --space-8: 2.4rem;
     --space-9: 3.6rem;
 
-    --rail-width: 240px;
+    --rail-width: 230px;
   }
 
   * {
@@ -41,17 +48,24 @@
   }
 
   body {
-    background: oklch(99% 0.003 75) !important;
+    background: oklch(99% 0.005 85) !important;
+  }
+
+  body::after {
+    display: none !important;
   }
 
   .top-controls,
-  .print-button {
+  .print-button,
+  .skip-link {
     display: none !important;
   }
 
   .cv-grid {
     max-width: 100%;
     padding: 0;
+    gap: 2rem;
+    min-height: auto;
   }
 
   .left-rail {
@@ -61,30 +75,44 @@
   .reveal {
     opacity: 1 !important;
     transform: none !important;
-    animation: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 
   h1 {
-    font-size: 1.6rem !important;
+    font-size: 1.7rem !important;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
   }
 
   h3 {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
+  }
+
+  .header,
+  .rail-section {
+    break-inside: avoid;
   }
 
   .experience-entry {
-    padding: 0.8rem 0 !important;
-    page-break-inside: avoid;
+    padding: 1rem 0 !important;
+    break-inside: avoid;
   }
 
   .experience-details li {
     font-size: 0.85rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .tag {
-    font-size: 0.65rem !important;
-    padding: 0.15rem 0.35rem !important;
+    font-size: 0.62rem !important;
+    padding: 0.15rem 0.45rem !important;
+  }
+
+  .contact-item {
+    text-decoration: none;
   }
 }
 

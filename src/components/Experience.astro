@@ -17,20 +17,23 @@ const { data, heading = "Experience" } = Astro.props;
 <section class="experience-section reveal">
   <h2>{heading}</h2>
   <div class="experience-list">
-    {data.experience.map((job) => (
+    {data.experience.map((job, index) => (
       <article class="experience-entry">
-        <div class="experience-header">
-          <div class="experience-title-group">
-            <h3>{job.title}</h3>
-            <span class="experience-company">{job.company}</span>
+        <span class="experience-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <div class="experience-body">
+          <div class="experience-header">
+            <div class="experience-title-group">
+              <h3>{job.title}</h3>
+              <span class="experience-company">{job.company}</span>
+            </div>
+            <span class="date-badge">{job.period}</span>
           </div>
-          <span class="date-badge">{job.period}</span>
+          <ul class="experience-details">
+            {job.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
         </div>
-        <ul class="experience-details">
-          {job.details.map((detail) => (
-            <li>{detail}</li>
-          ))}
-        </ul>
       </article>
     ))}
   </div>
@@ -43,16 +46,33 @@ const { data, heading = "Experience" } = Astro.props;
   }
 
   .experience-entry {
-    padding: var(--space-6) 0;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: var(--space-4);
+    padding: var(--space-7) 0;
     border-bottom: 1px solid var(--border);
   }
 
   .experience-entry:first-child {
-    padding-top: 0;
+    padding-top: var(--space-2);
   }
 
   .experience-entry:last-child {
     border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .experience-index {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    padding-top: 0.35rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .experience-body {
+    min-width: 0;
   }
 
   .experience-header {
@@ -66,57 +86,70 @@ const { data, heading = "Experience" } = Astro.props;
   .experience-title-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-2);
   }
 
   .experience-company {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--accent-secondary);
-    letter-spacing: 0.02em;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--accent);
+    letter-spacing: 0.01em;
   }
 
   .date-badge {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    padding: 0.25rem 0.6rem;
-    background: var(--accent-secondary-soft);
-    color: var(--accent-secondary);
-    border-radius: var(--radius-sm);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.65rem;
+    background: var(--accent-softer);
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    border-radius: 999px;
     white-space: nowrap;
     flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
   }
 
   .experience-details {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
   }
 
   .experience-details li {
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1.25rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    line-height: 1.65;
+    line-height: 1.7;
+    text-wrap: pretty;
   }
 
   .experience-details li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.55em;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
+    top: 0.72em;
+    width: 0.6rem;
+    height: 1px;
     background: var(--accent);
   }
 
   @media (max-width: 768px) {
+    .experience-entry {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+
+    .experience-index {
+      padding-top: 0;
+    }
+
     .experience-header {
       flex-direction: column;
-      gap: var(--space-2);
+      gap: var(--space-3);
     }
   }
 </style>
