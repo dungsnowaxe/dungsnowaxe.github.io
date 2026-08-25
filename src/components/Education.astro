@@ -1,4 +1,8 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { education as styles } from '../styles/education.stylex';
+import { cx } from '../styles/cx';
+
 export interface Props {
   data: {
     education: Array<{
@@ -14,56 +18,16 @@ export interface Props {
 const { data, heading = "Education" } = Astro.props;
 ---
 
-<div class="rail-section reveal">
+<div class={cx('rail-section', 'reveal')}>
   <span class="section-label">{heading}</span>
-  <div class="education-list">
+  <div {...stylex.attrs(styles.list)}>
     {data.education.map((edu) => (
-      <div class="education-entry">
-        <h3 class="education-degree">{edu.degree}</h3>
-        <span class="education-school">{edu.institution}</span>
-        <span class="education-period">{edu.period}</span>
-        <p class="education-desc">{edu.description}</p>
+      <div>
+        <h3 {...stylex.attrs(styles.degree)}>{edu.degree}</h3>
+        <span {...stylex.attrs(styles.school)}>{edu.institution}</span>
+        <span {...stylex.attrs(styles.period)}>{edu.period}</span>
+        <p {...stylex.attrs(styles.desc)}>{edu.description}</p>
       </div>
     ))}
   </div>
 </div>
-
-<style>
-  .education-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
-  }
-
-  .education-degree {
-    font-size: 0.95rem;
-    font-weight: 600;
-    font-variation-settings: 'opsz' 20;
-    line-height: 1.3;
-    margin-bottom: var(--space-1);
-  }
-
-  .education-school {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 0.85rem;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-
-  .education-period {
-    font-family: var(--font-mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.06em;
-    color: var(--text-tertiary);
-    display: block;
-    margin-bottom: var(--space-3);
-  }
-
-  .education-desc {
-    font-size: 0.8rem;
-    line-height: 1.65;
-    color: var(--text-tertiary);
-  }
-</style>

@@ -1,4 +1,7 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { languageSwitcher as styles } from '../styles/language-switcher.stylex';
+
 export interface Props {
   currentLang?: 'en' | 'vi';
   page?: 'home' | 'resume';
@@ -16,71 +19,8 @@ const enUrl = routes[page].en;
 const viUrl = routes[page].vi;
 ---
 
-<div class="lang-switcher">
-  <a href={enUrl} class={currentLang === 'en' ? 'active' : ''} aria-label="English" aria-current={currentLang === 'en' ? 'page' : undefined}>EN</a>
-  <span class="divider" aria-hidden="true"></span>
-  <a href={viUrl} class={currentLang === 'vi' ? 'active' : ''} aria-label="Tiếng Việt" aria-current={currentLang === 'vi' ? 'page' : undefined}>VI</a>
+<div {...stylex.attrs(styles.switcher)}>
+  <a href={enUrl} {...stylex.attrs(styles.link, currentLang === 'en' && styles.active)} aria-label="English" aria-current={currentLang === 'en' ? 'page' : undefined}>EN</a>
+  <span {...stylex.attrs(styles.divider)} aria-hidden="true"></span>
+  <a href={viUrl} {...stylex.attrs(styles.link, currentLang === 'vi' && styles.active)} aria-label="Tiếng Việt" aria-current={currentLang === 'vi' ? 'page' : undefined}>VI</a>
 </div>
-
-<style>
-  .lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    padding: 0 var(--space-3);
-  }
-
-  .lang-switcher a {
-    position: relative;
-    color: var(--text-tertiary);
-    text-decoration: none;
-    letter-spacing: 0.08em;
-    transition: color 0.25s var(--ease-out);
-    /* ≥44px touch target, visually compact */
-    padding: 0.6rem 0.15rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .lang-switcher a::after {
-    content: '';
-    position: absolute;
-    left: 0.15rem;
-    right: 0.15rem;
-    bottom: 0.45rem;
-    height: 1px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s var(--ease-spring);
-  }
-
-  .lang-switcher a:hover {
-    color: var(--text);
-    opacity: 1;
-  }
-
-  .lang-switcher a.active {
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  .lang-switcher a.active::after {
-    transform: scaleX(1);
-  }
-
-  .divider {
-    width: 1px;
-    height: 0.9rem;
-    background: var(--border-strong);
-  }
-
-  @media print {
-    .lang-switcher {
-      display: none !important;
-    }
-  }
-</style>

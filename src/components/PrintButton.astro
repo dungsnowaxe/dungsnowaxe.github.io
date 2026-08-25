@@ -1,15 +1,21 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { printButton as styles } from '../styles/print-button.stylex';
+import { hoverAncestor } from '../styles/markers.stylex';
+import { cx } from '../styles/cx';
+
 export interface Props {
   lang?: 'en' | 'vi';
 }
 
 const { lang = 'en' } = Astro.props;
 const label = lang === 'vi' ? 'Lưu PDF' : 'Save PDF';
+const buttonClass = cx('print-button', stylex.attrs(styles.button, hoverAncestor).class);
 ---
 
-<button class="print-button" onclick="window.print()" aria-label={lang === 'vi' ? 'Tải CV dạng PDF' : 'Download resume as PDF'}>
-  <span class="print-label">{label}</span>
-  <span class="print-icon" aria-hidden="true">
+<button class={buttonClass} onclick="window.print()" aria-label={lang === 'vi' ? 'Tải CV dạng PDF' : 'Download resume as PDF'}>
+  <span>{label}</span>
+  <span {...stylex.attrs(styles.icon)} aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 3v12"></path>
       <path d="m7 10 5 5 5-5"></path>
@@ -17,66 +23,3 @@ const label = lang === 'vi' ? 'Lưu PDF' : 'Save PDF';
     </svg>
   </span>
 </button>
-
-<style>
-  .print-button {
-    position: fixed;
-    bottom: var(--space-5);
-    right: var(--space-5);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: 0.35rem 0.35rem 0.35rem 1.1rem;
-    background: var(--accent);
-    color: var(--on-accent);
-    border: none;
-    border-radius: 999px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    box-shadow: var(--shadow-lifted);
-    transition: transform 0.35s var(--ease-spring),
-                box-shadow 0.35s var(--ease-spring),
-                background-color 0.35s var(--ease-spring);
-  }
-
-  .print-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.9rem;
-    height: 1.9rem;
-    border-radius: 999px;
-    background: color-mix(in oklch, var(--on-accent) 18%, transparent);
-    transition: transform 0.35s var(--ease-spring);
-  }
-
-  .print-button:hover {
-    transform: translateY(-2px);
-    background: var(--accent-strong);
-  }
-
-  .print-button:hover .print-icon {
-    transform: translateY(1px) scale(1.06);
-  }
-
-  .print-button:active {
-    transform: translateY(0) scale(0.98);
-  }
-
-  @media (max-width: 768px) {
-    .print-button {
-      bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
-      right: calc(var(--space-4) + env(safe-area-inset-right));
-    }
-  }
-
-  @media print {
-    .print-button {
-      display: none !important;
-    }
-  }
-</style>

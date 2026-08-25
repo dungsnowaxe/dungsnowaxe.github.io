@@ -1,4 +1,8 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { about as styles } from '../styles/about.stylex';
+import { cx } from '../styles/cx';
+
 export interface Props {
   data: {
     aboutMe: string;
@@ -9,15 +13,7 @@ export interface Props {
 const { data, heading = "About" } = Astro.props;
 ---
 
-<div class="rail-section reveal">
+<div class={cx('rail-section', 'reveal')}>
   <span class="section-label">{heading}</span>
-  <p class="about-text">{data.aboutMe}</p>
+  <p {...stylex.attrs(styles.aboutText)}>{data.aboutMe}</p>
 </div>
-
-<style>
-  .about-text {
-    font-size: 0.875rem;
-    line-height: 1.75;
-    color: var(--text-secondary);
-  }
-</style>
