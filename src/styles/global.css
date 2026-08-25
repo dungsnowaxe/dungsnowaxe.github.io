@@ -33,9 +33,9 @@
   --shadow-lifted: 0 2px 4px var(--shadow-color), 0 16px 48px -12px oklch(30% 0.03 55 / 0.18);
 
   /* Type */
-  --font-display: 'Fraunces', 'Be Vietnam Pro', Georgia, serif;
-  --font-body: 'Manrope', 'Be Vietnam Pro', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: "Fraunces", "Be Vietnam Pro", Georgia, serif;
+  --font-body: "Manrope", "Be Vietnam Pro", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -59,7 +59,7 @@
 /* Vietnamese gets its dedicated typeface; Fraunces keeps display
    duties — its Vietnamese subset renders diacritics natively. */
 html[lang="vi"] {
-  --font-body: 'Be Vietnam Pro', 'Manrope', system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", "Manrope", system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -89,14 +89,17 @@ html.theme-transition,
 html.theme-transition *,
 html.theme-transition *::before,
 html.theme-transition *::after {
-  transition: background-color 0.4s var(--ease-out),
-              color 0.4s var(--ease-out),
-              border-color 0.4s var(--ease-out),
-              fill 0.4s var(--ease-out),
-              stroke 0.4s var(--ease-out) !important;
+  transition:
+    background-color 0.4s var(--ease-out),
+    color 0.4s var(--ease-out),
+    border-color 0.4s var(--ease-out),
+    fill 0.4s var(--ease-out),
+    stroke 0.4s var(--ease-out) !important;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -162,7 +165,7 @@ body {
 
 /* Film grain — breaks digital flatness. Fixed, non-interactive. */
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   z-index: 90;
@@ -175,7 +178,10 @@ body::after {
   opacity: 0.055;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   line-height: 1.15;
   text-wrap: balance;
@@ -184,7 +190,7 @@ h1, h2, h3, h4 {
 h1 {
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 560;
-  font-variation-settings: 'opsz' 100;
+  font-variation-settings: "opsz" 100;
   letter-spacing: -0.015em;
 }
 
@@ -208,7 +214,7 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 1px;
   background: var(--border);
@@ -217,7 +223,7 @@ h2::after {
 h3 {
   font-size: clamp(1.15rem, 1.6vw, 1.35rem);
   font-weight: 600;
-  font-variation-settings: 'opsz' 40;
+  font-variation-settings: "opsz" 40;
   letter-spacing: -0.01em;
 }
 
@@ -293,7 +299,7 @@ a:hover {
 }
 
 .section-label::before {
-  content: '';
+  content: "";
   width: 5px;
   height: 5px;
   background: var(--accent);
@@ -327,9 +333,10 @@ a:hover {
   opacity: 0;
   transform: translateY(20px);
   filter: blur(6px);
-  transition: opacity 0.8s var(--ease-spring),
-              transform 0.8s var(--ease-spring),
-              filter 0.8s var(--ease-spring);
+  transition:
+    opacity 0.8s var(--ease-spring),
+    transform 0.8s var(--ease-spring),
+    filter 0.8s var(--ease-spring);
 }
 
 .reveal.visible {

@@ -60,12 +60,7 @@
     }
   ],
   "skills": {
-    "Languages & Core": [
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3 / SCSS"
-    ],
+    "Languages & Core": ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3 / SCSS"],
     "Frameworks & Libraries": [
       "React",
       "Vue",
@@ -76,13 +71,7 @@
       "Electron",
       "React Native"
     ],
-    "Tools & Practices": [
-      "Git & GitHub",
-      "Figma",
-      "CI/CD",
-      "Webpack / Vite",
-      "Docker"
-    ]
+    "Tools & Practices": ["Git & GitHub", "Figma", "CI/CD", "Webpack / Vite", "Docker"]
   },
   "footer": {
     "line1": "Built with Astro & crafted with attention to detail.",

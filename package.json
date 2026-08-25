@@ -1,18 +1,28 @@
 {
   "name": "personal-cv",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "update-cv": "node scripts/update-cv.js",
-    "update-cv:vi": "node scripts/update-cv.js --vi"
+    "check": "vp check",
+    "lint": "vp lint",
+    "fmt": "vp fmt",
+    "update-cv": "bun scripts/update-cv.js",
+    "update-cv:vi": "bun scripts/update-cv.js --vi"
   },
   "dependencies": {
-    "astro": "^7.0.5"
+    "@stylexjs/stylex": "^0.19.0",
+    "astro": "^7.2.6"
   },
-  "allowScripts": {
-    "esbuild@0.28.1": true
-  }
+  "devDependencies": {
+    "unplugin-stylex": "^0.6.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0",
+    "vite-plus": "0.3.0"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0"
+  },
+  "packageManager": "bun@1.4.0"
 }

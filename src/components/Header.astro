@@ -1,4 +1,9 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { header as styles } from '../styles/header.stylex';
+import { hoverAncestor } from '../styles/markers.stylex';
+import { cx } from '../styles/cx';
+
 export interface Props {
   data: {
     personalInfo: {
@@ -20,101 +25,25 @@ const labelPhone = labels.phone || "Phone";
 const labelEmail = labels.email || "Email";
 ---
 
-<div class="header reveal">
-  <div class="name-block">
+<div class={cx('reveal', stylex.attrs(styles.header).class)}>
+  <div {...stylex.attrs(styles.nameBlock)}>
     <h1>{personalInfo.fullName}</h1>
-    <p class="job-title">{personalInfo.jobTitle}</p>
+    <p {...stylex.attrs(styles.jobTitle)}>{personalInfo.jobTitle}</p>
   </div>
-  <div class="contact-list">
-    <a class="contact-item" href={`mailto:${personalInfo.email}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-      <span class="contact-text">
-        <span class="contact-label">{labelEmail}</span>
-        <span class="contact-value">{personalInfo.email}</span>
+  <div {...stylex.attrs(styles.contactList)}>
+    <a {...stylex.attrs(styles.contactItem, hoverAncestor)} href={`mailto:${personalInfo.email}`}>
+      <svg {...stylex.attrs(styles.contactSvg)} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      <span {...stylex.attrs(styles.contactText)}>
+        <span {...stylex.attrs(styles.contactLabel)}>{labelEmail}</span>
+        <span {...stylex.attrs(styles.contactValue)}>{personalInfo.email}</span>
       </span>
     </a>
-    <a class="contact-item" href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span class="contact-text">
-        <span class="contact-label">{labelPhone}</span>
-        <span class="contact-value">{personalInfo.phone}</span>
+    <a {...stylex.attrs(styles.contactItem, hoverAncestor)} href={`tel:${personalInfo.phone.replace(/[^+\d]/g, '')}`}>
+      <svg {...stylex.attrs(styles.contactSvg)} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span {...stylex.attrs(styles.contactText)}>
+        <span {...stylex.attrs(styles.contactLabel)}>{labelPhone}</span>
+        <span {...stylex.attrs(styles.contactValue)}>{personalInfo.phone}</span>
       </span>
     </a>
   </div>
 </div>
-
-<style>
-  .header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-
-  .name-block {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .job-title {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.05rem;
-    color: var(--accent);
-    letter-spacing: 0.01em;
-    max-width: none;
-  }
-
-  .contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    color: var(--text-tertiary);
-    text-decoration: none;
-    transition: color 0.25s var(--ease-out);
-  }
-
-  .contact-item:hover {
-    color: var(--accent);
-    opacity: 1;
-  }
-
-  .contact-item svg {
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .contact-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    min-width: 0;
-  }
-
-  .contact-label {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--text-tertiary);
-  }
-
-  .contact-value {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    word-break: break-word;
-    transition: color 0.25s var(--ease-out);
-  }
-
-  .contact-item:hover .contact-value {
-    color: var(--accent);
-  }
-</style>

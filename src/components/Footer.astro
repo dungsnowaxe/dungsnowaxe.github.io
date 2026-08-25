@@ -1,4 +1,8 @@
 ---
+import * as stylex from '@stylexjs/stylex';
+import { footer as styles } from '../styles/footer.stylex';
+import { cx } from '../styles/cx';
+
 export interface Props {
   data: {
     footer: {
@@ -11,31 +15,7 @@ export interface Props {
 const { data } = Astro.props;
 ---
 
-<footer class="footer reveal">
-  <p class="footer-text">{data.footer.line1}</p>
-  <p class="footer-sub">{data.footer.line2}</p>
+<footer class={cx('reveal', stylex.attrs(styles.footer).class)}>
+  <p {...stylex.attrs(styles.text)}>{data.footer.line1}</p>
+  <p {...stylex.attrs(styles.sub)}>{data.footer.line2}</p>
 </footer>
-
-<style>
-  .footer {
-    padding: var(--space-8) 0 var(--space-4);
-    text-align: center;
-    border-top: 1px solid var(--border);
-    margin-top: var(--space-7);
-  }
-
-  .footer-text {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    color: var(--text-tertiary);
-    margin-bottom: var(--space-2);
-  }
-
-  .footer-sub {
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    color: var(--text-tertiary);
-    font-style: italic;
-  }
-</style>
