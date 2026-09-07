@@ -25,7 +25,7 @@ const labelPhone = labels.phone || "Phone";
 const labelEmail = labels.email || "Email";
 ---
 
-<div class={cx('reveal', stylex.attrs(styles.header).class)}>
+<div class={cx('header', 'reveal', stylex.attrs(styles.header).class)}>
   <div {...stylex.attrs(styles.nameBlock)}>
     <h1>{personalInfo.fullName}</h1>
     <p {...stylex.attrs(styles.jobTitle)}>{personalInfo.jobTitle}</p>

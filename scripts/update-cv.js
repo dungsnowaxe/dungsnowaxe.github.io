@@ -87,7 +87,7 @@ function parseMarkdown(content) {
         currentSkillItems = [];
       } else if (currentSection === "experience") {
         currentItem = {
-          title: title,
+          title,
           company: "",
           period: "",
           details: [],
@@ -180,16 +180,6 @@ function parseMarkdown(content) {
     }
 
     if (currentSection === "skills") {
-      const categoryMatch = trimmed.match(/^###\s+(.+)$/);
-      if (categoryMatch) {
-        if (currentSkillCategory && currentSkillItems.length > 0) {
-          data.skills[currentSkillCategory] = currentSkillItems;
-        }
-        currentSkillCategory = categoryMatch[1].trim();
-        currentSkillItems = [];
-        continue;
-      }
-
       if (currentSkillCategory && trimmed && !trimmed.startsWith("#")) {
         const items = trimmed
           .split(",")
@@ -229,17 +219,13 @@ function main() {
     writeFileSync(outputPath, JSON.stringify(cvData, null, 2));
 
     const langLabel = isVietnamese ? "Vietnamese" : "English";
-    console.log(`✅ CV data updated successfully! (${langLabel})`);
-    console.log(`   Source: ${profilePath}`);
-    console.log(`   Output: ${outputPath}`);
-    console.log("");
-    console.log("Summary:");
-    console.log(`  - Name: ${cvData.personalInfo.fullName}`);
-    console.log(`  - Experience: ${cvData.experience.length} positions`);
-    console.log(`  - Education: ${cvData.education.length} entries`);
-    console.log(`  - Skills: ${Object.keys(cvData.skills).length} categories`);
+    console.log(`Updated ${langLabel} CV (${outputPath})`);
+    console.log(`  Name: ${cvData.personalInfo.fullName}`);
+    console.log(`  Experience: ${cvData.experience.length} positions`);
+    console.log(`  Education: ${cvData.education.length} entries`);
+    console.log(`  Skills: ${Object.keys(cvData.skills).length} categories`);
   } catch (error) {
-    console.error("❌ Error updating CV:", error.message);
+    console.error("Error updating CV:", error.message);
     process.exit(1);
   }
 }
