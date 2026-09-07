@@ -70,14 +70,12 @@ const ogImage = `${siteUrl}/ABMM0487ds.jpg`;
         setTimeout(function() { html.classList.remove('theme-transition'); }, 500);
       };
 
-      // Follow the OS while in auto mode
       mq.addEventListener('change', function() {
         if (html.getAttribute('data-theme-mode') === 'auto') {
           html.setAttribute('data-theme', mq.matches ? 'dark' : 'light');
         }
       });
 
-      // Staggered scroll-entry reveals (transform/opacity/filter only)
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
