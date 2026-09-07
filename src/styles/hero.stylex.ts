@@ -7,13 +7,14 @@ export const hero = stylex.create({
   root: {
     display: "grid",
     gridTemplateColumns: {
-      default: "minmax(0, 1fr) minmax(0, 1fr)",
-      [MOBILE]: "minmax(0, 1fr)",
+      default: "50% 50%",
+      [MOBILE]: "100%",
     },
     minHeight: {
       default: "100dvh",
       [MOBILE]: "auto",
     },
+    overflow: "hidden",
   },
   portrait: {
     position: "relative",
@@ -25,6 +26,8 @@ export const hero = stylex.create({
     },
   },
   portraitPicture: {
+    position: "absolute",
+    inset: 0,
     display: "block",
     width: "100%",
     height: "100%",
@@ -33,11 +36,13 @@ export const hero = stylex.create({
     display: "block",
     width: "100%",
     height: "100%",
+    maxWidth: "100%",
     objectFit: "cover",
     objectPosition: "center 20%",
   },
   content: {
     position: "relative",
+    zIndex: 1,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
