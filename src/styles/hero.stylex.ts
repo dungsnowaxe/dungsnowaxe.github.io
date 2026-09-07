@@ -7,8 +7,8 @@ export const hero = stylex.create({
   root: {
     display: "grid",
     gridTemplateColumns: {
-      default: "1fr 1fr",
-      [MOBILE]: "1fr",
+      default: "minmax(0, 1fr) minmax(0, 1fr)",
+      [MOBILE]: "minmax(0, 1fr)",
     },
     minHeight: {
       default: "100dvh",
@@ -18,13 +18,21 @@ export const hero = stylex.create({
   portrait: {
     position: "relative",
     overflow: "hidden",
-  },
-  portraitImg: {
-    width: "100%",
+    minWidth: 0,
     height: {
       default: "100dvh",
       [MOBILE]: "52dvh",
     },
+  },
+  portraitPicture: {
+    display: "block",
+    width: "100%",
+    height: "100%",
+  },
+  portraitImg: {
+    display: "block",
+    width: "100%",
+    height: "100%",
     objectFit: "cover",
     objectPosition: "center 20%",
   },
@@ -33,6 +41,7 @@ export const hero = stylex.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    minWidth: 0,
     padding: {
       default: `${space[9]} ${space[8]}`,
       [MOBILE]: `${space[7]} ${space[4]} calc(${space[7]} + env(safe-area-inset-bottom))`,
@@ -75,6 +84,8 @@ export const hero = stylex.create({
     letterSpacing: "-0.02em",
     lineHeight: 1.02,
     color: colors.text,
+    maxWidth: "100%",
+    overflowWrap: "break-word",
     marginBottom: {
       default: space[8],
       [MOBILE]: space[6],
@@ -84,6 +95,8 @@ export const hero = stylex.create({
     display: "flex",
     flexWrap: "wrap",
     gap: space[3],
+    minWidth: 0,
+    maxWidth: "100%",
   },
   link: {
     display: "inline-flex",
@@ -133,6 +146,7 @@ export const hero = stylex.create({
     fontWeight: 500,
     padding: "0.45rem 0.45rem 0.45rem 1.25rem",
     gap: space[3],
+    flexShrink: 0,
     boxShadow: colors.shadowAmbient,
     flex: {
       default: "0 1 auto",

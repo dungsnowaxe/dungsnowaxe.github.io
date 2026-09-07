@@ -23,7 +23,7 @@ const resumeUrl = base === '/' ? '/vi/resume/' : `${base}/vi/resume/`;
 
   <main id="main" {...stylex.attrs(hero.root)}>
     <div {...stylex.attrs(hero.portrait)}>
-      <Picture src={portrait} alt={`${personalInfo.fullName}, ${personalInfo.jobTitle}`} widths={[480, 960, 1280, 1920]} sizes="50vw" loading="eager" fetchpriority="high" formats={['avif', 'webp']} class={stylex.attrs(hero.portraitImg).class} />
+      <Picture src={portrait} alt={`${personalInfo.fullName}, ${personalInfo.jobTitle}`} widths={[480, 960, 1280, 1920]} sizes="50vw" loading="eager" fetchpriority="high" formats={['avif', 'webp']} class={stylex.attrs(hero.portraitImg).class} pictureAttributes={stylex.attrs(hero.portraitPicture)} />
     </div>
     <div {...stylex.attrs(hero.content)}>
       <span {...stylex.attrs(hero.eyebrow)}>{personalInfo.jobTitle}</span>
