@@ -18,9 +18,8 @@ export const footer = stylex.create({
     marginBottom: space[2],
   },
   sub: {
-    fontFamily: fonts.display,
-    fontSize: "0.9rem",
+    fontFamily: fonts.body,
+    fontSize: "0.78rem",
     color: colors.textTertiary,
-    fontStyle: "italic",
   },
 });

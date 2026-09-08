@@ -14,7 +14,7 @@
 
 ## About Me
 
-Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng các ứng dụng web và di động có khả năng mở rộng trong các lĩnh vực fintech, an ninh mạng và SaaS. Tôi chuyên sâu về hệ sinh thái React, Next.js và Vue, với thành tích nổi bật trong việc phát triển giao diện người dùng hiệu suất cao, dẫn dắt đội ngũ frontend và đưa ra các quyết định kỹ thuật phù hợp với mục tiêu kinh doanh.
+Kỹ sư frontend, 6+ năm — React, Next.js và Vue trong fintech, bảo mật và SaaS. Tôi dẫn dắt UI và team frontend từ greenfield tới production.
 
 ## Experience
 
@@ -53,7 +53,6 @@ Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng cá
 - **Period:** 2019 — 2021
 - **Details:**
   - Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác
-  - Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng
 
 ## Education
 
@@ -75,5 +74,5 @@ Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 
 ## Footer
 
-Xây dựng bằng Astro & chăm chút từng chi tiết.
+Xây dựng bằng Astro
 Sẵn sàng cung cấp thông tin tham khảo khi có yêu cầu.

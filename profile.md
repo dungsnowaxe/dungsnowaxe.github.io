@@ -15,7 +15,7 @@
 
 ## About Me
 
-Frontend engineer with 6+ years of experience building scalable web and mobile applications across fintech, cybersecurity, and SaaS domains. I specialize in React, Next.js, and Vue ecosystems, with a strong track record of delivering high-performance user interfaces, leading frontend teams, and driving technical decisions that align engineering with business outcomes.
+Frontend engineer, 6+ years — React, Next.js, and Vue across fintech, cybersecurity, and SaaS. I lead UI delivery and frontend teams from greenfield to production.
 
 ## Experience
 
@@ -54,7 +54,6 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
 - **Period:** 2019 — 2021
 - **Details:**
   - Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels
-  - Integrated RESTful APIs and third-party services to deliver seamless data flows across the application
 
 ## Education
 
@@ -76,5 +75,5 @@ Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 
 ## Footer
 
-Built with Astro & crafted with attention to detail.
+Built with Astro
 References available upon request.

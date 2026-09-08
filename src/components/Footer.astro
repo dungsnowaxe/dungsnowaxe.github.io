@@ -16,6 +16,6 @@ const { data } = Astro.props;
 ---
 
 <footer class={cx('reveal', stylex.attrs(styles.footer).class)}>
-  <p {...stylex.attrs(styles.text)}>{data.footer.line1}</p>
-  <p {...stylex.attrs(styles.sub)}>{data.footer.line2}</p>
+  {data.footer.line1 && <p {...stylex.attrs(styles.text)}>{data.footer.line1}</p>}
+  {data.footer.line2 && <p {...stylex.attrs(styles.sub)}>{data.footer.line2}</p>}
 </footer>

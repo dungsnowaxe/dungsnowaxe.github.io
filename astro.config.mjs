@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import stylex from "unplugin-stylex/astro";
 
 export default defineConfig({
+  site: "https://dungsnowaxe.github.io",
+  trailingSlash: "always",
   integrations: [
     stylex({
       stylex: {
