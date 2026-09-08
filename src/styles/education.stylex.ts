@@ -24,15 +24,15 @@ export const education = stylex.create({
   },
   period: {
     fontFamily: fonts.mono,
-    fontSize: "0.66rem",
+    fontSize: "0.75rem",
     letterSpacing: "0.06em",
-    color: colors.textTertiary,
+    color: colors.textSecondary,
     display: "block",
     marginBottom: space[3],
   },
   desc: {
     fontSize: "0.8rem",
     lineHeight: 1.65,
-    color: colors.textTertiary,
+    color: colors.textSecondary,
   },
 });

@@ -20,9 +20,18 @@ export const hero = stylex.create({
     position: "relative",
     overflow: "hidden",
     minWidth: 0,
+    flexShrink: 0,
     height: {
       default: "100dvh",
-      [MOBILE]: "52dvh",
+      [MOBILE]: "min(48dvh, 360px)",
+    },
+    minHeight: {
+      default: 0,
+      [MOBILE]: 240,
+    },
+    borderRadius: {
+      default: 0,
+      [MOBILE]: layout.radiusMd,
     },
   },
   portraitPicture: {
@@ -38,7 +47,10 @@ export const hero = stylex.create({
     height: "100%",
     maxWidth: "100%",
     objectFit: "cover",
-    objectPosition: "center 20%",
+    objectPosition: {
+      default: "center 20%",
+      [MOBILE]: "center 18%",
+    },
   },
   content: {
     position: "relative",
@@ -49,7 +61,7 @@ export const hero = stylex.create({
     minWidth: 0,
     padding: {
       default: `${space[9]} ${space[8]}`,
-      [MOBILE]: `${space[7]} ${space[4]} calc(${space[7]} + env(safe-area-inset-bottom))`,
+      [MOBILE]: `${space[5]} 0 0`,
     },
     "::before": {
       content: '""',

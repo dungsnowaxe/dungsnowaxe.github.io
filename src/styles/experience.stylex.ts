@@ -72,7 +72,7 @@ export const experience = stylex.create({
   },
   dateBadge: {
     fontFamily: fonts.mono,
-    fontSize: "0.66rem",
+    fontSize: "0.75rem",
     letterSpacing: "0.04em",
     padding: "0.3rem 0.65rem",
     backgroundColor: colors.accentSofter,
