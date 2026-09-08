@@ -61,12 +61,7 @@
     }
   ],
   "skills": {
-    "Ngôn ngữ & Nền tảng": [
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3 / SCSS"
-    ],
+    "Ngôn ngữ & Nền tảng": ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3 / SCSS"],
     "Frameworks & Thư viện": [
       "React",
       "Vue",
@@ -77,13 +72,7 @@
       "Electron",
       "React Native"
     ],
-    "Công cụ & Quy trình": [
-      "Git & GitHub",
-      "Figma",
-      "CI/CD",
-      "Webpack / Vite",
-      "Docker"
-    ]
+    "Công cụ & Quy trình": ["Git & GitHub", "Figma", "CI/CD", "Webpack / Vite", "Docker"]
   },
   "footer": {
     "line1": "Xây dựng bằng Astro",
