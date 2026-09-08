@@ -14,7 +14,7 @@
 
 ## About Me
 
-Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue trên các sản phẩm fintech, an ninh mạng và SaaS. Tôi dẫn dắt giao diện và đội frontend từ dự án mới tới production.
+Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue cho sản phẩm fintech, an ninh mạng và SaaS. Tôi dẫn dắt đội frontend và phụ trách UI từ dự án mới đến khi lên production.
 
 ## Experience
 
