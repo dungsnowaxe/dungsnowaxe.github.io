@@ -28,11 +28,8 @@ const { data, heading = "Experience" } = Astro.props;
         <div {...stylex.attrs(styles.body)}>
           <div {...stylex.attrs(styles.header)}>
             <div {...stylex.attrs(styles.titleGroup)}>
-              <h3>{job.impact}</h3>
-              <div {...stylex.attrs(styles.meta)}>
-                <span {...stylex.attrs(styles.jobTitle)}>{job.title}</span>
-                <span {...stylex.attrs(styles.company)}>{job.company}</span>
-              </div>
+              <h3>{job.company}</h3>
+              <span {...stylex.attrs(styles.jobTitle)}>{job.title}</span>
             </div>
             <span {...stylex.attrs(styles.dateBadge)}>{job.period}</span>
           </div>
