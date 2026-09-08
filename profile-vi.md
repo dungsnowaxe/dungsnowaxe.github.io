@@ -14,20 +14,21 @@
 
 ## About Me
 
-Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng các ứng dụng web và di động có khả năng mở rộng trong các lĩnh vực fintech, an ninh mạng và SaaS. Tôi chuyên sâu về hệ sinh thái React, Next.js và Vue, với thành tích nổi bật trong việc phát triển giao diện người dùng hiệu suất cao, dẫn dắt đội ngũ frontend và đưa ra các quyết định kỹ thuật phù hợp với mục tiêu kinh doanh.
+Kỹ sư frontend, 6+ năm — React, Next.js và Vue trong fintech, bảo mật và SaaS. Tôi dẫn dắt UI và team frontend từ greenfield tới production.
 
 ## Experience
 
-### Kỹ sư Frontend
+### Đưa app phân tích crypto tới 6k+ MAU
+- **Title:** Kỹ sư Frontend
 - **Company:** Birdeye
 - **Period:** 2023 — Hiện tại
 - **Details:**
   - Thiết kế kiến trúc và phát hành ứng dụng phân tích tiền điện tử đa nền tảng phục vụ 6.000+ người dùng hoạt động hàng tháng với khả năng trực quan hóa dữ liệu thị trường theo thời gian thực
   - Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design)
   - Dẫn dắt phát triển toàn diện landing page và bảng điều khiển phân tích Birdeye Data, chịu trách nhiệm cả triển khai UI/UX và tích hợp API
-  - Phối hợp chặt chẽ với các đội ngũ sản phẩm và thiết kế để nhanh chóng cải tiến các tính năng hướng đến người dùng trong môi trường startup nhịp độ nhanh
 
-### Kỹ sư Frontend
+### Dẫn dắt 4 FE cho Online Face v2
+- **Title:** Kỹ sư Frontend
 - **Company:** Tomosia
 - **Period:** 2022 — 2023
 - **Details:**
@@ -37,7 +38,8 @@ Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng cá
   - Dẫn dắt đội ngũ 4 kỹ sư frontend, tiến hành review code, định hướng kỹ thuật và hướng dẫn phát triển cho các lập trình viên junior
   - Đào tạo thực tập sinh, xây dựng tài liệu nội bộ và hướng dẫn lập trình giúp giảm 50% thời gian onboarding
 
-### Kỹ sư Frontend
+### Làm mới VPN desktop nội bộ (Electron)
+- **Title:** Kỹ sư Frontend
 - **Company:** VinCSS (Vingroup Cybersecurity)
 - **Period:** 2021 — 2022
 - **Details:**
@@ -45,13 +47,12 @@ Tôi là một kỹ sư frontend với hơn 6 năm kinh nghiệm xây dựng cá
   - Xây dựng bảng điều khiển quản lý giấy phép nội bộ (React + Ant Design) tự động hóa việc cấp phát khóa và giảm thiểu công việc thủ công cho đội ngũ vận hành
   - Duy trì và nâng cấp các sản phẩm trong hệ sinh thái xác thực FIDO2 của công ty (Vue 2 + Vuetify), đóng góp vào giải pháp bảo mật không mật khẩu
 
-### Lập trình viên Frontend
+### Xây nền tảng marketing đa kênh
+- **Title:** Lập trình viên Frontend
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
   - Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác
-  - Tích hợp API RESTful và các dịch vụ bên thứ ba để đảm bảo luồng dữ liệu liền mạch xuyên suốt ứng dụng
-  - Phối hợp với đội ngũ backend và thiết kế để triển khai tính năng theo phương pháp agile trong môi trường startup giai đoạn đầu
 
 ## Education
 
@@ -73,5 +74,5 @@ Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 
 ## Footer
 
-Xây dựng bằng Astro & chăm chút từng chi tiết.
+Xây dựng bằng Astro
 Sẵn sàng cung cấp thông tin tham khảo khi có yêu cầu.

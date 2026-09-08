@@ -63,6 +63,19 @@ export const experience = stylex.create({
     flexDirection: "column",
     gap: space[2],
   },
+  meta: {
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "baseline",
+    columnGap: space[3],
+    rowGap: space[1],
+  },
+  jobTitle: {
+    color: colors.textSecondary,
+    fontSize: "0.95rem",
+    fontWeight: 500,
+    letterSpacing: "0.01em",
+  },
   company: {
     fontFamily: fonts.display,
     fontStyle: "italic",

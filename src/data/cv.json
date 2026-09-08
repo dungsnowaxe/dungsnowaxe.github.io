@@ -5,20 +5,21 @@
     "phone": "+84 338-701-246",
     "email": "doananhdung1310@gmail.com"
   },
-  "aboutMe": "Frontend engineer with 6+ years of experience building scalable web and mobile applications across fintech, cybersecurity, and SaaS domains. I specialize in React, Next.js, and Vue ecosystems, with a strong track record of delivering high-performance user interfaces, leading frontend teams, and driving technical decisions that align engineering with business outcomes.",
+  "aboutMe": "Frontend engineer, 6+ years — React, Next.js, and Vue across fintech, cybersecurity, and SaaS. I lead UI delivery and frontend teams from greenfield to production.",
   "experience": [
     {
+      "impact": "Shipped crypto analytics to 6k+ MAU",
       "title": "Senior Frontend Developer",
       "company": "Birdeye",
       "period": "2023 — Present",
       "details": [
         "Architected and shipped a cross-platform crypto analytics mobile app serving 6,000+ monthly active users with real-time market data visualization",
         "Maintained and optimized the legacy Birdeye web platform (React + Ant Design)",
-        "Led end-to-end development of Birdeye Data's landing page and analytics dashboard, owning both UI/UX implementation and API integration",
-        "Collaborated closely with product and design teams to iterate rapidly on user-facing features in a fast-paced startup environment"
+        "Led end-to-end development of Birdeye Data's landing page and analytics dashboard, owning both UI/UX implementation and API integration"
       ]
     },
     {
+      "impact": "Led FE team of 4 through Online Face v2",
       "title": "Senior Frontend Developer",
       "company": "Tomosia",
       "period": "2022 — 2023",
@@ -31,6 +32,7 @@
       ]
     },
     {
+      "impact": "Rebuilt internal VPN desktop (Electron)",
       "title": "Senior Frontend Developer",
       "company": "VinCSS (Vingroup Cybersecurity)",
       "period": "2021 — 2022",
@@ -41,13 +43,12 @@
       ]
     },
     {
+      "impact": "Built omnichannel marketing platform",
       "title": "Frontend Developer",
       "company": "Gobysend",
       "period": "2019 — 2021",
       "details": [
-        "Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels",
-        "Integrated RESTful APIs and third-party services to deliver seamless data flows across the application",
-        "Collaborated with backend and design teams to ship features iteratively in an agile, early-stage startup environment"
+        "Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels"
       ]
     }
   ],
@@ -74,7 +75,7 @@
     "Tools & Practices": ["Git & GitHub", "Figma", "CI/CD", "Webpack / Vite", "Docker"]
   },
   "footer": {
-    "line1": "Built with Astro & crafted with attention to detail.",
+    "line1": "Built with Astro",
     "line2": "References available upon request."
   }
 }

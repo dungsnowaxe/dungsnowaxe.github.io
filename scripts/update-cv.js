@@ -87,7 +87,8 @@ function parseMarkdown(content) {
         currentSkillItems = [];
       } else if (currentSection === "experience") {
         currentItem = {
-          title,
+          impact: title,
+          title: "",
           company: "",
           period: "",
           details: [],
@@ -124,6 +125,12 @@ function parseMarkdown(content) {
     }
 
     if (currentSection === "experience" && currentItem) {
+      const titleMatch = trimmed.match(/^-\s*\*\*Title:\*\*\s*(.+)$/);
+      if (titleMatch) {
+        currentItem.title = titleMatch[1].trim();
+        continue;
+      }
+
       const companyMatch = trimmed.match(/^-\s*\*\*Company:\*\*\s*(.+)$/);
       if (companyMatch) {
         currentItem.company = companyMatch[1].trim();

@@ -19,7 +19,7 @@ const { data, heading = "Education" } = Astro.props;
 ---
 
 <div class={cx('rail-section', 'reveal')}>
-  <span class="section-label">{heading}</span>
+  <h2 class="section-label">{heading}</h2>
   <div {...stylex.attrs(styles.list)}>
     {data.education.map((edu) => (
       <div>

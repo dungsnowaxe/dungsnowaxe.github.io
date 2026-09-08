@@ -7,11 +7,11 @@ export interface Props {
   title?: string;
   description?: string;
   lang?: string;
+  canonicalUrl: string;
 }
 
-const { title = "Personal CV", description = "Personal CV", lang = "en" } = Astro.props;
-const siteUrl = 'https://dungsnowaxe.github.io';
-const ogImage = `${siteUrl}/ABMM0487ds.jpg`;
+const { title = "Personal CV", description = "Personal CV", lang = "en", canonicalUrl } = Astro.props;
+const ogImage = 'https://dungsnowaxe.github.io/ABMM0487ds.jpg';
 ---
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ const ogImage = `${siteUrl}/ABMM0487ds.jpg`;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
   <title>{title}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
@@ -33,7 +34,7 @@ const ogImage = `${siteUrl}/ABMM0487ds.jpg`;
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
-  <meta property="og:url" content={siteUrl} />
+  <meta property="og:url" content={canonicalUrl} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
