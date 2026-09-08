@@ -90,6 +90,10 @@
     font-size: 1rem !important;
   }
 
+  h3.skill-group-title {
+    font-size: 0.75rem !important;
+  }
+
   .header,
   .rail-section {
     break-inside: avoid;

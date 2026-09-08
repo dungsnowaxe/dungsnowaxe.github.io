@@ -19,16 +19,17 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
 
 ## Experience
 
-### Senior Frontend Developer
+### Shipped crypto analytics to 6k+ MAU
+- **Title:** Senior Frontend Developer
 - **Company:** Birdeye
 - **Period:** 2023 — Present
 - **Details:**
   - Architected and shipped a cross-platform crypto analytics mobile app serving 6,000+ monthly active users with real-time market data visualization
   - Maintained and optimized the legacy Birdeye web platform (React + Ant Design)
   - Led end-to-end development of Birdeye Data's landing page and analytics dashboard, owning both UI/UX implementation and API integration
-  - Collaborated closely with product and design teams to iterate rapidly on user-facing features in a fast-paced startup environment
 
-### Senior Frontend Developer
+### Led FE team of 4 through Online Face v2
+- **Title:** Senior Frontend Developer
 - **Company:** Tomosia
 - **Period:** 2022 — 2023
 - **Details:**
@@ -38,7 +39,8 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
   - Led a team of 4 frontend engineers, conducting code reviews, setting technical direction, and mentoring junior developers
   - Onboarded and trained interns, creating internal documentation and coding guidelines that reduced onboarding time by 50%
 
-### Senior Frontend Developer
+### Rebuilt internal VPN desktop (Electron)
+- **Title:** Senior Frontend Developer
 - **Company:** VinCSS (Vingroup Cybersecurity)
 - **Period:** 2021 — 2022
 - **Details:**
@@ -46,13 +48,13 @@ Frontend engineer with 6+ years of experience building scalable web and mobile a
   - Built an internal license management dashboard (React + Ant Design) that automated key provisioning and reduced manual overhead for the operations team
   - Maintained and enhanced products within the company's FIDO2 authentication ecosystem (Vue 2 + Vuetify), contributing to passwordless security solutions
 
-### Frontend Developer
+### Built omnichannel marketing platform
+- **Title:** Frontend Developer
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
   - Built and maintained Gobysend's core product — an omnichannel marketing platform (Vue.js + Nuxt) supporting Zalo OA, email, SMS, and other channels
   - Integrated RESTful APIs and third-party services to deliver seamless data flows across the application
-  - Collaborated with backend and design teams to ship features iteratively in an agile, early-stage startup environment
 
 ## Education
 

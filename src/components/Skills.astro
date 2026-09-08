@@ -34,11 +34,11 @@ const iconMap: Record<string, string[]> = {
 ---
 
 <div class={cx('rail-section', 'reveal')}>
-  <span class="section-label">{heading}</span>
+  <h2 class="section-label">{heading}</h2>
   <div {...stylex.attrs(styles.list)}>
     {Object.entries(data.skills).map(([category, items]) => (
       <div>
-        <h4>{category}</h4>
+        <h3 class="skill-group-title">{category}</h3>
         <div {...stylex.attrs(styles.tags)}>
           {items.map((skill) => {
             const slugs = iconMap[skill] || [];
