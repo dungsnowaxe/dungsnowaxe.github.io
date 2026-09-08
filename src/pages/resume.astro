@@ -16,21 +16,23 @@ const title = `${personalInfo.fullName} — ${personalInfo.jobTitle}`;
 ---
 
 <Layout title={title} description="CV — 6+ years frontend. Birdeye, Tomosia, VinCSS, Gobysend. React · Next · Vue." lang="en" canonicalUrl="https://dungsnowaxe.github.io/resume/">
-  <div class="top-controls">
-    <LanguageSwitcher currentLang="en" page="resume" />
-    <ThemeToggle lang="en" />
+  <div class="resume-page">
+    <div class="top-controls">
+      <LanguageSwitcher currentLang="en" page="resume" />
+      <ThemeToggle lang="en" />
+    </div>
+    <div class="cv-grid">
+      <aside class="left-rail">
+        <Header data={cvData} />
+        <About data={cvData} heading="About" />
+        <Skills data={cvData} heading="Skills" />
+        <Education data={cvData} heading="Education" />
+      </aside>
+      <main id="main" class="main-content">
+        <Experience data={cvData} heading="Experience" />
+        <Footer data={cvData} />
+      </main>
+    </div>
+    <PrintButton lang="en" />
   </div>
-  <div class="cv-grid">
-    <aside class="left-rail">
-      <Header data={cvData} />
-      <About data={cvData} heading="About" />
-      <Skills data={cvData} heading="Skills" />
-      <Education data={cvData} heading="Education" />
-    </aside>
-    <main id="main" class="main-content">
-      <Experience data={cvData} heading="Experience" />
-      <Footer data={cvData} />
-    </main>
-  </div>
-  <PrintButton lang="en" />
 </Layout>
