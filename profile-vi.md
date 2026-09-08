@@ -14,52 +14,52 @@
 
 ## About Me
 
-Kỹ sư frontend, 6+ năm — React, Next.js và Vue trong fintech, bảo mật và SaaS. Tôi dẫn dắt UI và team frontend từ greenfield tới production.
+Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue cho sản phẩm fintech, an ninh mạng và SaaS. Tôi dẫn dắt đội frontend và phụ trách UI từ dự án mới đến khi lên production.
 
 ## Experience
 
-### Đưa app phân tích crypto tới 6k+ MAU
+### Đưa ứng dụng phân tích crypto đạt 6.000+ MAU
 - **Title:** Kỹ sư Frontend
 - **Company:** Birdeye
 - **Period:** 2023 — Hiện tại
 - **Details:**
-  - Thiết kế kiến trúc và phát hành ứng dụng phân tích tiền điện tử đa nền tảng phục vụ 6.000+ người dùng hoạt động hàng tháng với khả năng trực quan hóa dữ liệu thị trường theo thời gian thực
-  - Duy trì và tối ưu hóa nền tảng web Birdeye phiên bản cũ (React + Ant Design)
-  - Dẫn dắt phát triển toàn diện landing page và bảng điều khiển phân tích Birdeye Data, chịu trách nhiệm cả triển khai UI/UX và tích hợp API
+  - Thiết kế kiến trúc và phát hành ứng dụng mobile phân tích crypto đa nền tảng, phục vụ 6.000+ người dùng hoạt động hàng tháng, hiển thị dữ liệu thị trường theo thời gian thực
+  - Bảo trì và tối ưu nền tảng web cũ của Birdeye (React + Ant Design)
+  - Phụ trách landing page và dashboard phân tích của Birdeye Data — làm cả giao diện và tích hợp API
 
-### Dẫn dắt 4 FE cho Online Face v2
+### Dẫn dắt nhóm 4 frontend xây Online Face v2
 - **Title:** Kỹ sư Frontend
 - **Company:** Tomosia
 - **Period:** 2022 — 2023
 - **Details:**
-  - Thiết kế và xây dựng bảng điều khiển HRM toàn diện từ đầu sử dụng React và Ant Design, hợp lý hóa các hoạt động nhân sự cho đội ngũ nội bộ
-  - Chịu trách nhiệm duy trì và phát triển tính năng cho Online Face v1 (Next.js + MUI), đảm bảo độ ổn định trong khi liên tục ra mắt các cập nhật quan trọng
-  - Dẫn dắt phát triển từ đầu Online Face v2, thiết lập kiến trúc frontend và tiêu chuẩn codebase cho nền tảng thế hệ tiếp theo
-  - Dẫn dắt đội ngũ 4 kỹ sư frontend, tiến hành review code, định hướng kỹ thuật và hướng dẫn phát triển cho các lập trình viên junior
-  - Đào tạo thực tập sinh, xây dựng tài liệu nội bộ và hướng dẫn lập trình giúp giảm 50% thời gian onboarding
+  - Xây dashboard HRM từ đầu bằng React và Ant Design, giúp đội nhân sự nội bộ làm việc gọn hơn
+  - Phụ trách bảo trì và phát triển tính năng Online Face v1 (Next.js + MUI): giữ ổn định, đồng thời đưa các bản cập nhật quan trọng lên production
+  - Dẫn dắt xây dựng Online Face v2 từ đầu, đặt kiến trúc frontend và chuẩn codebase cho phiên bản mới
+  - Dẫn dắt nhóm 4 kỹ sư frontend: review code, định hướng kỹ thuật và hướng dẫn junior
+  - Đào tạo thực tập sinh, viết tài liệu nội bộ và hướng dẫn lập trình, giảm 50% thời gian nhận việc
 
-### Làm mới VPN desktop nội bộ (Electron)
+### Xây lại ứng dụng VPN desktop nội bộ (Electron)
 - **Title:** Kỹ sư Frontend
 - **Company:** VinCSS (Vingroup Cybersecurity)
 - **Period:** 2021 — 2022
 - **Details:**
-  - Dẫn đầu dự án làm mới hoàn toàn ứng dụng VPN nội bộ dạng desktop sử dụng Electron và React, hiện đại hóa trải nghiệm người dùng và nâng cao tính bảo mật
-  - Xây dựng bảng điều khiển quản lý giấy phép nội bộ (React + Ant Design) tự động hóa việc cấp phát khóa và giảm thiểu công việc thủ công cho đội ngũ vận hành
-  - Duy trì và nâng cấp các sản phẩm trong hệ sinh thái xác thực FIDO2 của công ty (Vue 2 + Vuetify), đóng góp vào giải pháp bảo mật không mật khẩu
+  - Xây lại ứng dụng VPN desktop nội bộ bằng Electron và React, cập nhật giao diện và tăng cường bảo mật
+  - Xây dashboard quản lý giấy phép nội bộ (React + Ant Design) để cấp khóa tự động, giảm thao tác thủ công cho đội vận hành
+  - Bảo trì và nâng cấp các sản phẩm xác thực FIDO2 của công ty (Vue 2 + Vuetify), phục vụ đăng nhập không mật khẩu
 
 ### Xây nền tảng marketing đa kênh
 - **Title:** Lập trình viên Frontend
 - **Company:** Gobysend
 - **Period:** 2019 — 2021
 - **Details:**
-  - Xây dựng và duy trì sản phẩm cốt lõi của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác
+  - Xây dựng và bảo trì sản phẩm chính của Gobysend — nền tảng marketing đa kênh (Vue.js + Nuxt) hỗ trợ Zalo OA, email, SMS và các kênh khác
 
 ## Education
 
 ### Kỹ sư Điện tử - Viễn thông
 - **Institution:** Đại học Bách khoa Hà Nội (HUST)
 - **Period:** 2014 — 2019
-- **Description:** Tốt nghiệp từ Viện Điện tử - Viễn thông (nay thuộc Trường Điện - Điện tử). Chuyên ngành Công nghệ Thông tin và Truyền thông, tập trung vào kỹ thuật phần mềm và xử lý tín hiệu.
+- **Description:** Tốt nghiệp Viện Điện tử - Viễn thông (nay thuộc Trường Điện - Điện tử). Chuyên ngành Công nghệ Thông tin và Truyền thông, hướng kỹ thuật phần mềm và xử lý tín hiệu.
 
 ## Skills
 
@@ -75,4 +75,4 @@ Git & GitHub, Figma, CI/CD, Webpack / Vite, Docker
 ## Footer
 
 Xây dựng bằng Astro
-Sẵn sàng cung cấp thông tin tham khảo khi có yêu cầu.
+Sẵn sàng cung cấp người tham chiếu khi được yêu cầu.
