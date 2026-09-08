@@ -30,7 +30,7 @@ export const header = stylex.create({
     display: "flex",
     alignItems: "center",
     gap: space[3],
-    color: colors.textTertiary,
+    color: colors.textSecondary,
     textDecoration: "none",
     transitionProperty: "color",
     transitionDuration: "0.25s",
@@ -52,10 +52,10 @@ export const header = stylex.create({
   },
   contactLabel: {
     fontFamily: fonts.mono,
-    fontSize: "0.58rem",
+    fontSize: "0.75rem",
     textTransform: "uppercase",
     letterSpacing: "0.14em",
-    color: colors.textTertiary,
+    color: colors.textSecondary,
   },
   contactValue: {
     fontSize: "0.82rem",

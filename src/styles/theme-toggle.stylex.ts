@@ -2,6 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 import { colors, layout } from "./tokens.stylex";
 
 const PRINT = "@media print";
+const MOBILE = "@media (max-width: 768px)";
 
 export const themeToggle = stylex.create({
   control: {
@@ -22,8 +23,14 @@ export const themeToggle = stylex.create({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "2rem",
-    height: "2rem",
+    width: {
+      default: "2rem",
+      [MOBILE]: 44,
+    },
+    height: {
+      default: "2rem",
+      [MOBILE]: 44,
+    },
     backgroundColor: "transparent",
     borderWidth: 0,
     borderRadius: "999px",
