@@ -21,21 +21,23 @@ const headerLabels = {
 ---
 
 <Layout title={title} description="CV — 6+ năm frontend. Birdeye, Tomosia, VinCSS, Gobysend. React · Next · Vue." lang="vi" canonicalUrl="https://dungsnowaxe.github.io/vi/resume/">
-  <div class="top-controls">
-    <LanguageSwitcher currentLang="vi" page="resume" />
-    <ThemeToggle lang="vi" />
+  <div class="resume-page">
+    <div class="top-controls">
+      <LanguageSwitcher currentLang="vi" page="resume" />
+      <ThemeToggle lang="vi" />
+    </div>
+    <div class="cv-grid">
+      <aside class="left-rail">
+        <Header data={cvData} labels={headerLabels} />
+        <About data={cvData} heading="Giới thiệu" />
+        <Skills data={cvData} heading="Kỹ năng chuyên môn" />
+        <Education data={cvData} heading="Học vấn" />
+      </aside>
+      <main id="main" class="main-content">
+        <Experience data={cvData} heading="Kinh nghiệm" />
+        <Footer data={cvData} />
+      </main>
+    </div>
+    <PrintButton lang="vi" />
   </div>
-  <div class="cv-grid">
-    <aside class="left-rail">
-      <Header data={cvData} labels={headerLabels} />
-      <About data={cvData} heading="Giới thiệu" />
-      <Skills data={cvData} heading="Kỹ năng chuyên môn" />
-      <Education data={cvData} heading="Học vấn" />
-    </aside>
-    <main id="main" class="main-content">
-      <Experience data={cvData} heading="Kinh nghiệm" />
-      <Footer data={cvData} />
-    </main>
-  </div>
-  <PrintButton lang="vi" />
 </Layout>

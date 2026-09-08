@@ -411,14 +411,19 @@ html.theme-transition *::after {
       right: var(--space-3);
     }
 
-    /* D1: in-flow controls on cream above the portrait — never over the photo */
-    .hero-page {
+    /* D1/D8: in-flow cream chrome above identity — never over photo or name */
+    .hero-page,
+    .resume-page {
       padding-top: calc(env(safe-area-inset-top) + var(--space-3));
       padding-inline: var(--space-4);
+    }
+
+    .hero-page {
       padding-bottom: calc(var(--space-7) + env(safe-area-inset-bottom));
     }
 
-    .hero-page .top-controls {
+    .hero-page .top-controls,
+    .resume-page .top-controls {
       position: relative;
       top: auto;
       right: auto;
@@ -429,9 +434,15 @@ html.theme-transition *::after {
       background: var(--surface-raised);
     }
 
-    .hero-page .theme-control .mode {
+    .hero-page .theme-control .mode,
+    .resume-page .theme-control .mode {
       width: 44px;
       height: 44px;
+    }
+
+    .resume-page .cv-grid {
+      padding-top: 0;
+      padding-inline: 0;
     }
   }
 }
