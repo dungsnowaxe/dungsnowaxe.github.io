@@ -14,7 +14,7 @@
 
 ## About Me
 
-Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue cho sản phẩm fintech, an ninh mạng và SaaS. Tôi dẫn dắt đội frontend và phụ trách UI từ dự án mới đến khi lên production.
+Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue trên các sản phẩm fintech, an ninh mạng và SaaS. Tôi dẫn dắt giao diện và đội frontend từ dự án mới tới production.
 
 ## Experience
 
@@ -27,7 +27,7 @@ Kỹ sư frontend hơn sáu năm, chuyên React, Next.js và Vue cho sản phẩ
   - Bảo trì và tối ưu nền tảng web cũ của Birdeye (React + Ant Design)
   - Phụ trách landing page và dashboard phân tích của Birdeye Data — làm cả giao diện và tích hợp API
 
-### Dẫn dắt nhóm 4 frontend xây Online Face v2
+### Dẫn dắt nhóm 4 frontend làm Online Face v2
 - **Title:** Kỹ sư Frontend
 - **Company:** Tomosia
 - **Period:** 2022 — 2023
