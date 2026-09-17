@@ -15,7 +15,7 @@ export interface Props {
 const { data } = Astro.props;
 ---
 
-<footer class={cx('reveal', stylex.attrs(styles.footer).class)}>
+<footer class={cx(stylex.attrs(styles.footer).class)}>
   {data.footer.line1 && <p {...stylex.attrs(styles.text)}>{data.footer.line1}</p>}
   {data.footer.line2 && <p {...stylex.attrs(styles.sub)}>{data.footer.line2}</p>}
 </footer>

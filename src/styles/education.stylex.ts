@@ -16,8 +16,9 @@ export const education = stylex.create({
   },
   school: {
     fontFamily: fonts.display,
-    fontStyle: "italic",
-    fontSize: "0.85rem",
+    fontStyle: "normal",
+    fontWeight: 500,
+    fontSize: "0.9rem",
     color: colors.accent,
     display: "block",
     marginBottom: "0.2rem",

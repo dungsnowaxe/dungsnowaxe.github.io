@@ -43,9 +43,5 @@ export const skills = stylex.create({
     width: "0.75rem",
     height: "0.75rem",
     flexShrink: 0,
-    backgroundColor: "currentColor",
-    maskSize: "contain",
-    maskPosition: "center",
-    maskRepeat: "no-repeat",
   },
 });

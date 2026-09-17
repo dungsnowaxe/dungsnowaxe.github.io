@@ -1,8 +1,10 @@
+/* Hallmark · design-system: DESIGN.md (Personal CV · Editorial Luxury) · homepage: Photographic Split · resume: Sticky-Rail Document · eyebrows: one max (Experience) · icons: feather-stroke, skill-tags typography-only · motion: header entrance only */
 /* ============================================================
    Design tokens — Editorial Luxury
    Warm bone (light) / deep espresso (dark), one burnt-orange
    accent, Fraunces display serif, Manrope body (EN),
    Be Vietnam Pro body (VI), JetBrains Mono for data.
+   Locked system: see DESIGN.md at project root.
    ============================================================ */
 
 :root {
@@ -202,21 +204,32 @@ html.theme-transition *::after {
     letter-spacing: 0;
   }
 
-  /* Section headings: mono eyebrow + hairline rule */
+  /* Section headings: display by default. The mono eyebrow variant
+     (h2.eyebrow) is allowed on ONE section per page — Experience. */
   h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    font-weight: 600;
+    font-variation-settings: "opsz" 40;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: var(--space-6);
+  }
+
+  h2.eyebrow {
     display: flex;
     align-items: center;
     gap: var(--space-3);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 500;
+    font-variation-settings: normal;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--text-secondary);
-    margin-bottom: var(--space-6);
   }
 
-  h2::after {
+  h2.eyebrow::after {
     content: "";
     flex: 1;
     height: 1px;
@@ -290,19 +303,18 @@ html.theme-transition *::after {
     padding-bottom: 0;
   }
 
+  /* Rail section titles: display subheads, not eyebrows. */
   .section-label {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    line-height: inherit;
-    text-wrap: unset;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-variation-settings: "opsz" 20;
+    letter-spacing: -0.01em;
+    color: var(--text);
     margin-bottom: var(--space-4);
-    font-weight: 500;
   }
 
   .section-label::before {
@@ -311,12 +323,6 @@ html.theme-transition *::after {
     height: 5px;
     background: var(--accent);
     flex-shrink: 0;
-  }
-
-  /* Rail section h2s keep the label look, not the Experience hairline rule. */
-  h2.section-label::after {
-    content: none;
-    display: none;
   }
 
   .main-content {

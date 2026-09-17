@@ -1,216 +1,188 @@
 ---
 name: Personal CV
-description: Dark editorial bilingual CV with burnt orange accent
+description: Editorial luxury bilingual CV, warm-bone light / espresso dark, burnt-orange accent
 colors:
-  forge-orange: "#FF6B35"
-  forge-orange-soft: "#FF6B3526"
-  charcoal-base: "#0a0a0a"
-  carbon-surface: "#141414"
-  raised-carbon: "#1a1a1a"
-  warm-bone: "#F5F5F0"
-  iron-gray: "#888888"
-  ghost-border: "#F5F5F014"
+  bg: "oklch(96.8% 0.012 82)"
+  surface: "oklch(94.2% 0.014 80)"
+  surface-raised: "oklch(98.6% 0.01 88)"
+  text: "oklch(24% 0.02 55)"
+  text-secondary: "oklch(34% 0.02 58)"
+  text-tertiary: "oklch(40% 0.018 60)"
+  accent: "oklch(52% 0.14 47)"
+  accent-strong: "oklch(46% 0.13 45)"
+  accent-soft: "oklch(52% 0.14 47 / 0.1)"
+  bg-dark: "oklch(16.5% 0.012 55)"
+  surface-dark: "oklch(20.5% 0.014 56)"
+  text-dark: "oklch(93.5% 0.012 80)"
+  accent-dark: "oklch(74% 0.14 55)"
 typography:
   display:
-    fontFamily: "'Oswald', sans-serif"
-    fontSize: "clamp(3rem, 10vw, 7rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "0.02em"
-  headline:
-    fontFamily: "'Oswald', sans-serif"
-    fontSize: "clamp(1.5rem, 4vw, 2.5rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "0.02em"
-  title:
-    fontFamily: "'Oswald', sans-serif"
-    fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "0.02em"
+    fontFamily: "'Fraunces', Georgia, serif"
+    fontSize: "clamp(2rem, 3.6vw, 2.9rem)"
+    fontWeight: 560
+    lineHeight: 1.15
+    letterSpacing: "-0.015em"
+  hero-name:
+    fontFamily: "'Fraunces', Georgia, serif"
+    fontSize: "clamp(2.75rem, 6vw, 5rem)"
+    fontWeight: 480
+    lineHeight: 1.02
+    letterSpacing: "-0.02em"
+  section-heading:
+    fontFamily: "'Fraunces', Georgia, serif"
+    fontSize: "clamp(1.15rem, 1.6vw, 1.35rem)"
+    fontWeight: 600
+    lineHeight: 1.15
   body:
-    fontFamily: "'Source Serif 4', serif"
-    fontSize: "1.05rem"
+    fontFamily: "'Manrope', 'Be Vietnam Pro', system-ui, sans-serif"
+    fontSize: "0.9375rem"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.75
   label:
     fontFamily: "'JetBrains Mono', monospace"
-    fontSize: "0.8rem"
+    fontSize: "0.75rem"
     fontWeight: 500
     lineHeight: 1.4
-    letterSpacing: "0.05em"
+    letterSpacing: "0.18em"
 rounded:
-  sm: "4px"
+  sm: "6px"
+  md: "12px"
+  lg: "20px"
+  pill: "999px"
 spacing:
   xs: "8px"
   sm: "16px"
   md: "32px"
   lg: "64px"
   xl: "96px"
-  2xl: "128px"
-components:
-  tag:
-    backgroundColor: "{colors.forge-orange-soft}"
-    textColor: "{colors.forge-orange}"
-    rounded: "{rounded.sm}"
-    padding: "6px 13px"
-  tag-hover:
-    backgroundColor: "{colors.forge-orange}"
-    textColor: "{colors.charcoal-base}"
-  card:
-    backgroundColor: "{colors.carbon-surface}"
-    textColor: "{colors.warm-bone}"
-    rounded: "{rounded.sm}"
-    padding: "32px"
-  print-button:
-    backgroundColor: "{colors.forge-orange}"
-    textColor: "{colors.charcoal-base}"
-    rounded: "{rounded.sm}"
-    padding: "12px 20px"
-  date-badge:
-    backgroundColor: "{colors.forge-orange-soft}"
-    textColor: "{colors.forge-orange}"
-    rounded: "{rounded.sm}"
-    padding: "5px 11px"
-  contact-item:
-    backgroundColor: "{colors.carbon-surface}"
-    textColor: "{colors.warm-bone}"
-    rounded: "{rounded.sm}"
-    padding: "16px"
-  lang-switcher:
-    backgroundColor: "{colors.carbon-surface}"
-    textColor: "{colors.iron-gray}"
-    rounded: "{rounded.sm}"
-    padding: "6px 11px"
+icons:
+  voice: "feather-stroke (1.5px, round caps) for UI; monochrome brand marks in skill pills"
+  skill-tags: "self-hosted inline SVGs (src/data/brand-icons.ts), fill=currentColor, no CDN"
+motion:
+  entrance: "header only (opacity + 20px translate, ease-out)"
+  reveal: "forbidden on all other sections"
+eyebrows:
+  rule: "max one mono eyebrow per page (Experience). All other headings are display."
 ---
 
 # Design System: Personal CV
 
 ## 1. Overview
 
-**Creative North Star: "The Night Workshop"**
+**Creative North Star: "Editorial Luxury"**
 
-A dark work surface where every tool has its place and nothing is left out by accident. The charcoal ground absorbs distraction; Forge Orange marks what matters. Typography carries the weight: Oswald for structure and headings, Source Serif 4 for readable body text, JetBrains Mono for data and labels. Three voices, one conversation.
+A warm-bone page in light, deep espresso in dark, with one desaturated burnt-orange accent carrying the entire identity. Typography carries the weight: Fraunces for display and headings, Manrope for body (Be Vietnam Pro takes body duty in Vietnamese, where diacritics stack), JetBrains Mono for data and labels. Three voices, one conversation.
 
-The system is deliberately restrained. Sections divide by thin hairline borders, not padded containers. Spacing follows a doubling scale (8, 16, 32, 64, 96, 128px) that creates clear rhythm without monotony. Interactive elements respond with small vertical shifts and border warmth, never with bounces or elastic curves. The page feels like a well-organized workbench at night: focused, warm at the edges, precise at the center.
+The system is deliberately restrained. The resume is a sticky-rail document: identity and contact pinned left, experience flowing right, divided by hairline borders — never by padded containers or bento grids. The homepage is a photographic split: portrait left, name and links right. Interactive elements respond with small vertical shifts and border warmth, never with bounces or elastic curves.
 
-This system explicitly rejects corporate resume templates, WordPress themes, LinkedIn PDF exports, generic section dividers, stock icons, and bento-grid layouts. If it looks like a template, it has failed.
+This system explicitly rejects corporate resume templates, WordPress themes, LinkedIn PDF exports, generic section dividers, stock icons, bento-grid layouts, and gradient headlines. If it looks like a template, it has failed.
 
 **Key Characteristics:**
-- Dark tonal layering (three charcoal steps) with single warm accent
-- Editorial type pairing: condensed sans display, serif body, monospace labels
+- Dual-theme tonal layering (warm bone / espresso) with single warm accent
+- Editorial type pairing: Fraunces display serif, Manrope body, JetBrains Mono labels
 - Flat surfaces with hairline borders; shadow reserved for floating elements only
-- Responsive and tactile: hover states lift, borders warm, tags invert
-- Print stylesheet inverts to light theme for ink efficiency
+- One orchestrated entrance (header); everything else is simply present
+- Print stylesheet for clean PDF export via the browser dialog
 
 ## 2. Colors
 
-A restrained palette built on one warm accent against cool charcoal neutrals. Forge Orange carries the entire identity on roughly 10% of any given screen. The rest is tonal carbon.
+A restrained palette built on one warm accent against tinted neutrals. Burnt orange carries the identity on roughly 10% of any given screen. Every neutral is tinted toward the anchor hue — zero-chroma greys are forbidden.
 
-### Primary
-- **Forge Orange** (#FF6B35): The single identity color. Used on section headings (h2), interactive accents, tags, the print button, and the drop cap. Carries all warmth and visual energy. Never used as a background fill at full opacity except on the print button and tag hover.
+### Light (canonical)
+- **Bone Base** (`oklch(96.8% 0.012 82)`): Page background. Warm paper, never pure white.
+- **Bone Surface** (`oklch(94.2% 0.014 80)`): Tags, contact-adjacent surfaces. One step below base.
+- **Bone Raised** (`oklch(98.6% 0.01 88)`): Lightest surface; control island fill.
+- **Espresso Ink** (`oklch(24% 0.02 55)`): Primary text. Never pure black.
+- **Burnt Orange** (`oklch(52% 0.14 47)`): The single identity color. Links, date badges, the print button, eyebrow accents. AA on bone.
 
-### Neutral
-- **Charcoal Base** (#0a0a0a): Page background. Near-black with a barely perceptible warm undertone.
-- **Carbon Surface** (#141414): Card backgrounds, contact items, language switcher. One tonal step above the base.
-- **Raised Carbon** (#1a1a1a): Scrollbar thumbs. The lightest surface in the dark stack.
-- **Warm Bone** (#F5F5F0): Primary text. Off-white with a yellow-warm cast, never clinical pure white.
-- **Iron Gray** (#888888): Muted text, secondary labels, supporting copy. The workhorse neutral for body content.
-- **Forge Orange Soft** (#FF6B3526, 15% opacity): Tag backgrounds, date badge fills. Forge Orange at low opacity for subtle accent surfaces.
-- **Ghost Border** (#F5F5F014, 8% opacity): Section dividers, card borders, surface outlines. Warm Bone at near-invisible opacity.
+### Dark
+- **Espresso Base** (`oklch(16.5% 0.012 55)`): Page background.
+- **Espresso Surface** (`oklch(20.5% 0.014 56)`): One tonal step above base.
+- **Bone Ink** (`oklch(93.5% 0.012 80)`): Primary text. Warm off-white.
+- **Ember Orange** (`oklch(74% 0.14 55)`): Dark-theme accent. Same hue family, lifted lightness.
 
-**The One Flame Rule.** Forge Orange is the only saturated color on the page. It appears on section headings, interactive highlights, and the print button. If a second saturated hue enters the palette, the restraint contract is broken.
+**The One Flame Rule.** Burnt/Ember Orange is the only saturated color on the page. If a second saturated hue enters the palette, the restraint contract is broken.
 
 ## 3. Typography
 
-**Display Font:** Oswald (sans-serif fallback)
-**Body Font:** Source Serif 4 (serif fallback)
+**Display Font:** Fraunces (Georgia fallback)
+**Body Font:** Manrope (EN) / Be Vietnam Pro (VI), system-ui fallback
 **Label Font:** JetBrains Mono (monospace fallback)
 
-**Character:** Three distinct voices in tight coordination. Oswald cuts sharp and loud for headings, all uppercase, condensed weight. Source Serif 4 reads warm and measured for body text. JetBrains Mono marks data, labels, and code-related content with mechanical precision. The pairing feels editorial and technical simultaneously, never decorative.
+**Character:** Three distinct voices in tight coordination. Fraunces heads in roman — always `font-style: normal`, never italic. Manrope reads warm and measured for body text. JetBrains Mono marks data, labels, and metadata with mechanical precision. Vietnamese body switches to Be Vietnam Pro so stacked diacritics render natively.
 
 ### Hierarchy
-- **Display** (Oswald 700, clamp(3rem, 10vw, 7rem), line-height 1.1): The hero name. Used once per page for the candidate's full name.
-- **Headline** (Oswald 700, clamp(1.5rem, 4vw, 2.5rem), line-height 1.1): Section headings (Experience, Education, Skills, About Me). Forge Orange color, uppercase. Each marks a new content territory.
-- **Title** (Oswald 700, clamp(1.1rem, 2.5vw, 1.4rem), line-height 1.1): Job titles, degree names within cards. Warm Bone color, uppercase.
-- **Body** (Source Serif 4 400, 1.05rem, line-height 1.6): Paragraphs, experience details, descriptions. Iron Gray color. Capped at 65ch max-width for reading comfort.
-- **Label** (JetBrains Mono 500, 0.8rem, line-height 1.4, uppercase): Tags, contact labels, company names, date badges, footer text. Letter-spacing 0.05em. The mechanical voice for metadata.
+- **Hero name** (Fraunces 480, clamp(2.75rem, 6vw, 5rem), line-height 1.02): The candidate's full name on the homepage. Roman, tight tracking.
+- **H1** (Fraunces 560, clamp(2rem, 3.6vw, 2.9rem)): The resume identity name. Roman.
+- **Section heading** (Fraunces 600, clamp(1.15rem, 1.6vw, 1.35rem)): Default for every section — Experience, About, Skills, Education. Ink color, sentence case.
+- **Eyebrow variant** (JetBrains Mono 500, 0.75rem, uppercase, 0.18em tracking, with hairline rule): allowed on **one section per page maximum** — currently Experience. All other sections use the display heading.
+- **Body** (Manrope 400, 0.9375rem, line-height 1.75): Paragraphs, experience details. Secondary ink. Capped at 65ch.
+- **Label** (JetBrains Mono 500, 0.75rem, uppercase): Date badges, contact labels, skill-group titles, footer text.
 
-**The Three Voices Rule.** Each font family has one job. Oswald heads, Source Serif reads, JetBrains labels. A heading set in Source Serif or a label set in Oswald means the hierarchy has collapsed.
+**The Three Voices Rule.** Each font family has one job. Fraunces heads, Manrope reads, JetBrains labels. A heading set in Manrope or a label set in Fraunces means the hierarchy has collapsed.
+
+**Typography purity.** Display type is always roman. Emphasis travels via weight, accent colour, or an underline — never via an italicised display face. Italic survives only as body-copy emphasis inside running paragraphs.
 
 ## 4. Elevation
 
-Flat by default. Depth comes from tonal steps between the three charcoal surfaces (base, surface, raised), not from shadows. Ghost Border hairlines separate sections and cards without visual weight.
+Flat by default. Depth comes from tonal steps between surfaces, not from shadows. Hairline borders separate sections and entries without visual weight.
 
-The single exception: the print button floats with `box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3)`, a warm Forge Orange glow that marks it as detached from the page surface. On hover, the shadow deepens to `0 6px 30px rgba(255, 107, 53, 0.4)`.
-
-**The Flat-By-Default Rule.** Shadows are prohibited except on fixed floating elements. Cards, sections, and content blocks convey depth through background color steps and border opacity, never through drop shadows.
+Floating elements (control island, print button) use the tinted ambient shadow, which carries the warm hue. Cards and content blocks never cast shadows.
 
 ## 5. Components
 
-### Tags (Skill Chips)
-- **Shape:** Gently curved (4px radius), compact padding (6px 13px)
-- **Default:** Forge Orange Soft background, Forge Orange text, thin Forge Orange border at 25% opacity
-- **Hover:** Fills entirely with Forge Orange, text inverts to Charcoal Base, lifts 2px upward. Responsive and tactile.
-- **Font:** JetBrains Mono 0.8rem, uppercase
+### Homepage hero — photographic split
+- **Layout:** Two equal columns — portrait left, name + job-title eyebrow + link pills right. `100dvh` on desktop, stacked with a capped `min(48dvh, 360px)` portrait on mobile.
+- **Eyebrow:** Single mono eyebrow (job title) with a 2rem accent rule. The page's one eyebrow.
+- **Links:** Pill buttons, mono 0.75rem. Primary (View Resume) is a filled accent pill with a circular arrow chip; secondary links are hairline-bordered. One hover signal each (lift), no stacked effects.
+- **Atmosphere:** One small accent-soft radial glow inside the content column. Single hue, low opacity — ambience, not decoration.
 
-### Cards (Experience, Education)
-- **Shape:** Gently curved (4px radius), generous padding (32px)
-- **Background:** Carbon Surface (#141414)
-- **Border:** Ghost Border (Warm Bone at 8% opacity)
-- **Hover:** Lifts 4px upward, border warms to Forge Orange at 30% opacity
-- **Layout:** Flex column with header row (title + date badge) and detail list below
+### Resume — sticky-rail document
+- **Layout:** Fixed 320px left rail (identity, About, Skills, Education) + fluid main column (Experience, footer). Single column on mobile.
+- **Experience entries:** Border-separated rows with a mono accent index (`01`, `02` …), company `h3`, role line, pill date badge, detail list with accent tick markers. No cards-in-cards.
+- **Date badges:** Pill, accent-soft fill, accent text, hairline accent border, `tabular-nums`. Never interactive.
 
-### Date Badges
-- **Shape:** Same radius as tags (4px), tight padding (5px 11px)
-- **Style:** Forge Orange Soft background, Forge Orange text, JetBrains Mono 0.75rem
-- **Purpose:** Inline metadata for time periods. Never interactive.
+### Tags (skill chips)
+- **Shape:** Full pill, compact padding, hairline border
+- **Default:** Surface fill, secondary-ink mono text
+- **Hover:** Fills with accent, text inverts to on-accent, lifts 1px
+- **Icons:** Self-hosted monochrome brand marks (`src/data/brand-icons.ts`, inlined at build, `fill=currentColor` so they invert with the tag). No CDN, no network request, print-safe. Deliberate exception to the one-voice rule: brand logos confined to pills read as labelling, not decoration.
 
-### Contact Items
-- **Shape:** Gently curved (4px radius), standard padding (16px)
-- **Background:** Carbon Surface
-- **Border:** Ghost Border, warms on hover to Forge Orange at 30%
-- **Layout:** Vertical stack of label (mono, small, muted) over value (serif, larger, white)
+### Icons — one voice, one documented exception
+- **Feather-stroke only:** 1.5px stroke, round caps and joins, `currentColor`. Brand marks (GitHub, LinkedIn) are drawn as stroke glyphs in the same voice — never filled brand paths beside stroked UI icons.
+- **Exception:** skill pills carry small monochrome brand marks, self-hosted and inlined. Confined to one component, they read as labels.
+- One library per project. No emoji as icons.
 
-### Print Button
-- **Shape:** Gently curved (4px radius), medium padding (12px 20px)
-- **Background:** Forge Orange at full saturation
-- **Text:** Charcoal Base, JetBrains Mono 0.85rem
-- **Shadow:** Warm orange glow (0 4px 20px at 30% opacity)
-- **Hover:** Lifts 2px, shadow deepens to 40% opacity
-- **Position:** Fixed bottom-right, z-index 100. Hidden in print.
+### Contact items
+- Vertical stack of mono uppercase label over serif value, with a single stroke icon. Hover warms to accent — one signal.
 
-### Language Switcher
-- **Shape:** Gently curved (4px radius), compact padding (6px 11px)
-- **Background:** Carbon Surface, Ghost Border
-- **Font:** JetBrains Mono 0.8rem
-- **States:** Inactive links in Iron Gray, hover brightens to Warm Bone, active link in Forge Orange with weight 600
-- **Position:** Fixed top-right, z-index 100. Hidden in print.
+### Print button
+- Fixed bottom-right pill, accent fill, on-accent mono text with circular icon chip. Lifts on hover. Hidden in print.
 
-### Hero Section
-- **Layout:** Full viewport height, centered content
-- **Atmosphere:** Large radial gradient (70vw) positioned top-right, Forge Orange at 6% opacity. Subtle warm glow, never overt.
-- **Animation:** Staggered fade-up reveals (0.1s intervals) using cubic-bezier(0.22, 1, 0.36, 1)
+### Control island
+- Fixed top-right pill cluster (language + theme) over a translucent raised surface with blur. In-flow full-width bar on mobile. Purposeful glass — it floats over content, so depth communication is its job.
 
-### Section Dividers
-- **Treatment:** Single hairline border-top between consecutive sections, Ghost Border color. No decorative elements, no spacing ornaments.
+### Motion
+- **Single entrance:** the resume header fades up once on scroll into view (opacity + 20px translate, exponential ease-out). Every other section is simply present — no universal reveal, no stagger cascade.
+- Focus rings appear instantly. `prefers-reduced-motion` collapses motion to near-zero.
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** use Forge Orange as the single saturated color. Section headings, tags, the print button, and the drop cap are its domain.
-- **Do** separate surfaces with tonal steps (Charcoal Base, Carbon Surface, Raised Carbon) and Ghost Border hairlines, never with shadows.
-- **Do** cap body text at 65ch and use Source Serif 4 for all readable paragraphs.
-- **Do** add subtle hover lift (2px to 4px) and border warmth on interactive elements. The system is responsive and tactile.
-- **Do** use the spacing doubling scale (8, 16, 32, 64, 96, 128px) for vertical rhythm.
-- **Do** hide the print button and language switcher in print mode, and switch the palette to light theme with darker Forge Orange (#D44A1A).
+- **Do** use Burnt/Ember Orange as the single saturated color.
+- **Do** separate surfaces with tonal steps and hairline borders, never with shadows (except floating elements).
+- **Do** cap body text at 65ch.
+- **Do** keep display type roman — emphasis via weight, accent, or underline.
+- **Do** keep one icon voice (feather-stroke) and typography-only skill tags.
+- **Do** allow max one mono eyebrow per page; all other headings are Fraunces display.
+- **Do** animate one entrance (header). Leave everything else still.
 
 ### Don't:
 - **Don't** use a second saturated color. One flame only.
-- **Don't** apply drop shadows to cards or content sections. Shadows belong exclusively to the floating print button.
-- **Don't** use Oswald for body text or Source Serif 4 for headings. The three voices stay in their lanes.
-- **Don't** introduce bento grids, stock icons, or template-like section dividers. PRODUCT.md names these as anti-references: anything that signals "template" rather than "bespoke."
-- **Don't** use pure white (#fff) or pure black (#000). Every neutral is tinted: Warm Bone and Charcoal Base carry subtle warmth.
-- **Don't** use bounce or elastic easing curves. All motion uses cubic-bezier(0.22, 1, 0.36, 1) or similar exponential ease-out.
-- **Don't** add decorative elements (ornaments, stock photos, background patterns) that do not convey information.
+- **Don't** use zero-chroma greys. Every neutral carries the warm hue (≥ 0.005 chroma).
+- **Don't** use Fraunces italic for headings or Manrope for display. The three voices stay in their lanes.
+- **Don't** introduce bento grids, stock icons, filled-then-stroked icon mixes, or template-like section dividers.
+- **Don't** use pure white (#fff) or pure black (#000).
+- **Don't** use bounce or elastic easing curves.
+- **Don't** put every section behind a scroll-triggered fade. One entrance, then stillness.
+- **Don't** invent metrics, testimonials, or logos. Real numbers, placeholders marked `—`, or no proof slot.

@@ -19,8 +19,8 @@ export interface Props {
 const { data, heading = "Experience" } = Astro.props;
 ---
 
-<section class={cx('experience-section', 'reveal')}>
-  <h2>{heading}</h2>
+<section class={cx('experience-section')}>
+  <h2 class="eyebrow">{heading}</h2>
   <div {...stylex.attrs(styles.list)}>
     {data.experience.map((job, index) => (
       <article class={cx('experience-entry', stylex.attrs(styles.entry).class)}>

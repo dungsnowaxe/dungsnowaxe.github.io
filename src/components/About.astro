@@ -13,7 +13,7 @@ export interface Props {
 const { data, heading = "About" } = Astro.props;
 ---
 
-<div class={cx('rail-section', 'reveal')}>
+<div class={cx('rail-section')}>
   <h2 class="section-label">{heading}</h2>
   <p {...stylex.attrs(styles.aboutText)}>{data.aboutMe}</p>
 </div>

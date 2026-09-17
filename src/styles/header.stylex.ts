@@ -14,8 +14,8 @@ export const header = stylex.create({
   },
   jobTitle: {
     fontFamily: fonts.display,
-    fontStyle: "italic",
-    fontWeight: 400,
+    fontStyle: "normal",
+    fontWeight: 500,
     fontSize: "1.05rem",
     color: colors.accent,
     letterSpacing: "0.01em",

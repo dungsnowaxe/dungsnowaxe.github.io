@@ -1,6 +1,7 @@
 ---
 import * as stylex from '@stylexjs/stylex';
 import { skills as styles } from '../styles/skills.stylex';
+import { brandPaths } from '../data/brand-icons';
 import { cx } from '../styles/cx';
 
 export interface Props {
@@ -33,7 +34,7 @@ const iconMap: Record<string, string[]> = {
 };
 ---
 
-<div class={cx('rail-section', 'reveal')}>
+<div class={cx('rail-section')}>
   <h2 class="section-label">{heading}</h2>
   <div {...stylex.attrs(styles.list)}>
     {Object.entries(data.skills).map(([category, items]) => (
@@ -41,16 +42,14 @@ const iconMap: Record<string, string[]> = {
         <h3 class="skill-group-title">{category}</h3>
         <div {...stylex.attrs(styles.tags)}>
           {items.map((skill) => {
-            const slugs = iconMap[skill] || [];
+            const slugs = (iconMap[skill] || []).filter((slug) => brandPaths[slug]);
             const iconAttrs = stylex.attrs(styles.tagIcon);
             return (
               <span class={cx('tag', stylex.attrs(styles.tag).class)}>
                 {slugs.map((slug) => (
-                  <span
-                    class={iconAttrs.class}
-                    aria-hidden="true"
-                    style={`-webkit-mask-image: url('https://cdn.simpleicons.org/${slug}'); mask-image: url('https://cdn.simpleicons.org/${slug}');`}
-                  ></span>
+                  <svg class={iconAttrs.class} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={brandPaths[slug]} />
+                  </svg>
                 ))}
                 {skill}
               </span>

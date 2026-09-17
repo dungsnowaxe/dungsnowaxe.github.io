@@ -18,7 +18,7 @@ export interface Props {
 const { data, heading = "Education" } = Astro.props;
 ---
 
-<div class={cx('rail-section', 'reveal')}>
+<div class={cx('rail-section')}>
   <h2 class="section-label">{heading}</h2>
   <div {...stylex.attrs(styles.list)}>
     {data.education.map((edu) => (

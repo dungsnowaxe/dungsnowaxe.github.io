@@ -1,3 +1,4 @@
+/* Hallmark · design-system: DESIGN.md (Personal CV · Editorial Luxury) — values mirror global.css custom properties. */
 /**
  * Design tokens as StyleX vars. Values reference the CSS custom properties
  * defined in global.css so data-theme + print overrides keep working.
